@@ -3,9 +3,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import "./global.css"
 
 const RootLayout = ({ children }: Readonly<PropsWithChildren>): ReactNode => (
-    <html
-        lang="en"
-    >
+    <html lang="en">
         <body>
             {children}
         </body>

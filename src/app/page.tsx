@@ -75,10 +75,10 @@ const Page = (): ReactNode => {
     }
 
     return (
-        <div className="m-4">
+        <div className="p-4 flex flex-col gap-4">
             <form
                 action={submit}
-                className="flex justify-between items-end gap-1"
+                className="flex justify-between items-end gap-"
             >
                 <input
                     type="text"
@@ -95,29 +95,27 @@ const Page = (): ReactNode => {
                     Load
                 </button>
             </form>
-            <div>
-                <MediaPlayer
-                    ref={playerRef}
-                    title="Sprite Fight"
-                    src={streamUrl}
-                    aspectRatio="16/9"
-                    viewType="video"
-                    load="custom"
-                    posterLoad="eager"
-                    playsInline
-                >
-                    <MediaProvider>
-                        <Poster
-                            src="https://files.vidstack.io/sprite-fight/poster.webp"
-                            alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
-                        />
-                    </MediaProvider>
-                    <DefaultVideoLayout
-                        colorScheme="dark"
-                        icons={defaultLayoutIcons}
+            <MediaPlayer
+                ref={playerRef}
+                title="Sprite Fight"
+                src={streamUrl}
+                aspectRatio="16/9"
+                viewType="video"
+                load="custom"
+                posterLoad="eager"
+                playsInline
+            >
+                <MediaProvider>
+                    <Poster
+                        src="https://files.vidstack.io/sprite-fight/poster.webp"
+                        alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
                     />
-                </MediaPlayer>
-            </div>
+                </MediaProvider>
+                <DefaultVideoLayout
+                    colorScheme="dark"
+                    icons={defaultLayoutIcons}
+                />
+            </MediaPlayer>
         </div>
     );
 }
