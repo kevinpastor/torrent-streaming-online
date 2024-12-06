@@ -1,95 +1,125 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import { MediaPlayer, MediaPlayerInstance, MediaProvider, Poster } from '@vidstack/react';
+import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
+import { ReactNode, useEffect, useRef, useState } from "react"
+import WebTorrent from "webtorrent"
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+import '@vidstack/react/player/styles/default/theme.css';
+import '@vidstack/react/player/styles/default/layouts/video.css';
+
+const Page = (): ReactNode => {
+    const [isInitializing, setIsInitializing] = useState(true)
+    const clientRef = useRef<WebTorrent.Instance>()
+    // const videoRef = useRef<HTMLVideoElement>(null)
+    const [streamUrl, setStreamUrl] = useState<string>("")
+    const playerRef = useRef<MediaPlayerInstance>(null)
+
+    useEffect(() => {
+        if (clientRef.current !== undefined) {
+            return
+        }
+
+        const execute = async () => {
+            clientRef.current = new WebTorrent()
+
+            const registration = await navigator.serviceWorker.register('/sw.min.js', { scope: './' })
+            const serviceWorker = registration.installing || registration.waiting || registration.active
+            if (serviceWorker === null) {
+                return
+            }
+
+            const createServer = () => {
+                clientRef.current!.createServer({ controller: registration })
+                setIsInitializing(false)
+            }
+
+            if (serviceWorker.state === "activated") {
+                createServer()
+                return
+            }
+
+            serviceWorker.addEventListener("statechange", ({ target }) => {
+                if (target === null || !("state" in target) || target.state !== "activated") {
+                    return
+                }
+
+                createServer()
+            })
+        }
+
+        // TODO
+        execute().catch(console.error)
+    }, [])
+
+    const submit = (formData: FormData) => {
+        const magnet = formData.get("magnet")
+        console.log(magnet)
+        if (clientRef.current === undefined || typeof magnet !== "string") {
+            return
+        }
+        console.log("q-ywfupl")
+
+        clientRef.current.add(magnet, ({ files }) => {
+            console.log(files)
+            const file = files.find(({ name }) => name.endsWith('.mp4'))
+            if (file === undefined) {
+                return
+            }
+
+            setStreamUrl(file.streamURL)
+            playerRef.current?.startLoading()
+
+            // file.streamTo(videoRef.current)
+        })
+    }
+
+    return (
+        <div className="m-4">
+            <form
+                action={submit}
+                className="flex justify-between items-end gap-1"
+            >
+                <input
+                    type="text"
+                    id="magnet"
+                    autoComplete="off"
+                    name="magnet"
+                    placeholder="Magnet"
+                    defaultValue="magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent"
+                />
+                <button
+                    type="submit"
+                    disabled={isInitializing}
+                >
+                    Load
+                </button>
+            </form>
+            <div>
+                <MediaPlayer
+                    ref={playerRef}
+                    title="Sprite Fight"
+                    src={streamUrl}
+                    aspectRatio="16/9"
+                    viewType="video"
+                    load="custom"
+                    posterLoad="eager"
+                    playsInline
+                >
+                    <MediaProvider>
+                        <Poster
+                            src="https://files.vidstack.io/sprite-fight/poster.webp"
+                            alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
+                        />
+                    </MediaProvider>
+                    <DefaultVideoLayout
+                        colorScheme="dark"
+                        icons={defaultLayoutIcons}
+                    />
+                </MediaPlayer>
+            </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
+
+export default Page;
