@@ -34,13 +34,13 @@ importers:
         specifier: ^0.468.0
         version: 0.468.0(react@19.0.0)
       next:
-        specifier: 15.1.1
+        specifier: ^15.1.1
         version: 15.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
-        specifier: 19.0.0
+        specifier: ^19.0.0
         version: 19.0.0
       react-dom:
-        specifier: 19.0.0
+        specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
       react-error-boundary:
         specifier: ^4.1.2
@@ -74,7 +74,7 @@ importers:
         specifier: ^8
         version: 8.57.1
       eslint-config-next:
-        specifier: 15.1.1
+        specifier: ^15.1.1
         version: 15.1.1(eslint@8.57.1)(typescript@5.7.2)
       postcss:
         specifier: ^8.4.49
