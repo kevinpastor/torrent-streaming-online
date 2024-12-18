@@ -4,7 +4,6 @@ import { TriangleAlertIcon } from "lucide-react";
 import { PropsWithChildren, ReactNode } from "react";
 
 import { ExternalLink } from "~/components/ExternalLink";
-import { TypographyH1 } from "~/components/TypographyH1";
 import { TypographyInlineCode } from "~/components/TypographyInlineCode";
 import { Alert, AlertTitle, AlertDescription } from "~/components/ui/alert";
 

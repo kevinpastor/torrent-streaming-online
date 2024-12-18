@@ -13,7 +13,7 @@ interface Props {
     onChange: (path: string) => void
 }
 
-export const FileSelector = ({ files, selectedPath, onChange: handleChange }: Props): ReactNode => {
+export const FileSelector = ({ files, selectedPath }: Props): ReactNode => {
     const file = files.find(({ path }) => path === selectedPath)
 
     if (file === undefined) {
