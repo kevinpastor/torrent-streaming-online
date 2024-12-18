@@ -1,6 +1,6 @@
 "use client"
 
-import {Root, Group, Value, Trigger, Icon, ScrollUpButton, ScrollDownButton, Content, Portal, Label, Item, ItemIndicator, ItemText, Separator, Viewport} from "@radix-ui/react-select"
+import { Root, Group, Value, Trigger, Icon, ScrollUpButton, ScrollDownButton, Content, Portal, Label, Item, ItemIndicator, ItemText, Separator, Viewport } from "@radix-ui/react-select"
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
 import { forwardRef, ElementRef, ComponentPropsWithoutRef } from "react"
 
