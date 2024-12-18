@@ -84,7 +84,7 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>): ReactNode => (
                         Can any torrent be streamed?
                     </TypographyH3>
                     <TypographyP>
-                        No; not right now.
+                        No; not at the moment.
                     </TypographyP>
                 </div>
             </div>
