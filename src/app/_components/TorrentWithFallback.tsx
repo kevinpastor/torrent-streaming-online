@@ -12,7 +12,9 @@ interface Props {
 
 export const TorrentWithFallback = ({ torrentPromise }: Props): ReactNode => {
     if (torrentPromise === undefined) {
-        return <TorrentInitialFallback />
+        return (
+            <TorrentInitialFallback />
+        );
     }
 
     return (
@@ -22,4 +24,4 @@ export const TorrentWithFallback = ({ torrentPromise }: Props): ReactNode => {
             </Suspense>
         </ErrorBoundary >
     );
-}
+};

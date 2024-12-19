@@ -14,4 +14,4 @@ export const PagePendingFallback = (): ReactNode => (
         />
         <TorrentInitialFallback />
     </div>
-)
+);

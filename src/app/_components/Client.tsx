@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Client = ({ clientPromise }: Props): ReactNode => {
-    const client = use(clientPromise)
+    const client: Instance = use(clientPromise)
 
     const [torrentPromise, setTorrentPromise] = useState<Promise<Torrent>>()
 
@@ -19,7 +19,7 @@ export const Client = ({ clientPromise }: Props): ReactNode => {
             torrent.destroy()
         }
 
-        const promise = new Promise<Torrent>((resolve) => {
+        const promise: Promise<Torrent> = new Promise((resolve): void => {
             client.add(magnet, resolve)
         })
 
@@ -31,7 +31,7 @@ export const Client = ({ clientPromise }: Props): ReactNode => {
             return
         }
 
-        const magnet = clipboardData.getData("text")
+        const magnet: string = clipboardData.getData("text")
         loadTorrent(magnet)
     }
 

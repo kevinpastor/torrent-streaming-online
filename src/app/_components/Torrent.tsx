@@ -1,5 +1,5 @@
 import { ReactNode, use, useState } from "react";
-import { Torrent as ITorrent } from "webtorrent";
+import { Torrent as ITorrent, TorrentFile } from "webtorrent";
 
 import { FileSelector } from "./FileSelector";
 import { Player } from "./Player";
@@ -9,10 +9,10 @@ interface Props {
 }
 
 export const Torrent = ({ torrentPromise }: Props): ReactNode => {
-    const torrent = use(torrentPromise);
+    const torrent: ITorrent = use(torrentPromise);
 
-    const [selectedPath, setSelectedPath] = useState(() => (
-        torrent.files.find((file) => (
+    const [selectedPath, setSelectedPath] = useState((): string | undefined => (
+        torrent.files.find((file: TorrentFile): boolean => (
             // At runtime, `type` is defined.
             ("type" in file && file.type === "video/mp4")
             || file.path.endsWith(".mp4")
@@ -23,7 +23,7 @@ export const Torrent = ({ torrentPromise }: Props): ReactNode => {
         setSelectedPath(path);
     };
 
-    const url = torrent.files.find(({ path }) => (path === selectedPath))?.streamURL;
+    const url: string | undefined = torrent.files.find(({ path }: TorrentFile): boolean => (path === selectedPath))?.streamURL;
 
     return (
         <>

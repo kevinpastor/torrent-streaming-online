@@ -1,11 +1,11 @@
 import { Loader2 } from 'lucide-react';
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 import { useFormStatus } from 'react-dom';
 
 import { Button } from '~/components/ui/button';
 
 export const Submit = (): ReactNode => {
-    const { pending } = useFormStatus()
+    const { pending } = useFormStatus();
 
     return (
         <Button

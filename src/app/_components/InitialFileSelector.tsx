@@ -8,4 +8,4 @@ export const InitialFileSelector = (): ReactNode => (
             <SelectValue placeholder="No files available" />
         </SelectTrigger>
     </Select>
-)
+);

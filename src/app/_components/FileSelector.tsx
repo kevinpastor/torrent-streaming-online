@@ -3,7 +3,7 @@ import { TorrentFile } from "webtorrent"
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select"
 
-const isSupported = (file: TorrentFile): boolean => (
+const isFormatSupported = (file: TorrentFile): boolean => (
     file.path.endsWith(".mp4")
 )
 
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const FileSelector = ({ files, selectedPath }: Props): ReactNode => {
-    const file = files.find(({ path }) => path === selectedPath)
+    const file: TorrentFile | undefined = files.find(({ path }: TorrentFile): boolean => (path === selectedPath))
 
     if (file === undefined) {
         return (
@@ -38,7 +38,7 @@ export const FileSelector = ({ files, selectedPath }: Props): ReactNode => {
                         <SelectItem
                             key={file.path}
                             value={file.path}
-                            disabled={!isSupported(file)}
+                            disabled={!isFormatSupported(file)}
                         >
                             {file.path}
                         </SelectItem>

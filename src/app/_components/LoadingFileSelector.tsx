@@ -8,4 +8,4 @@ export const LoadingFileSelector = (): ReactNode => (
             <SelectValue placeholder="Loading files..." />
         </SelectTrigger>
     </Select>
-)
+);

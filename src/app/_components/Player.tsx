@@ -23,4 +23,4 @@ export const Player = ({ url }: Props): ReactNode => (
             icons={defaultLayoutIcons}
         />
     </MediaPlayer>
-)
+);
