@@ -12,8 +12,13 @@ export const Torrent = ({ torrentPromise }: Props): ReactNode => {
     const torrent = use(torrentPromise);
 
     const [selectedPath, setSelectedPath] = useState(() => (
-        torrent.files.find(({ type }) => (type === "video/mp4"))?.path
+        torrent.files.find((file) => (
+            // At runtime, `type` is defined.
+            ("type" in file && file.type === "video/mp4")
+            || file.path.endsWith(".mp4")
+        ))?.path
     ));
+
     const handleChange = (path: string): void => {
         setSelectedPath(path);
     };
@@ -25,7 +30,8 @@ export const Torrent = ({ torrentPromise }: Props): ReactNode => {
             <FileSelector
                 files={torrent.files}
                 selectedPath={selectedPath}
-                onChange={handleChange} />
+                onChange={handleChange}
+            />
             {url === undefined
                 ? (
                     <>nothing to show here</>
