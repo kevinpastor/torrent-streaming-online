@@ -2,9 +2,10 @@ import { ReactNode, Suspense } from "react"
 import { ErrorBoundary } from "react-error-boundary";
 import { Torrent as ITorrent } from "webtorrent"
 
-import { Torrent } from "./Torrent";
-import { TorrentInitialFallback } from "./TorrentInitialFallback";
-import { TorrentPendingFallback } from "./TorrentPendingFallback";
+import { Torrent } from "./Torrent/Torrent";
+import { TorrentInitial } from "./TorrentInitial";
+import { TorrentLoading } from "./TorrentLoading";
+import { TorrentError } from "./TorrentError";
 
 interface Props {
     torrentPromise?: Promise<ITorrent>
@@ -13,15 +14,15 @@ interface Props {
 export const TorrentWithFallback = ({ torrentPromise }: Props): ReactNode => {
     if (torrentPromise === undefined) {
         return (
-            <TorrentInitialFallback />
+            <TorrentInitial />
         );
     }
 
     return (
-        <ErrorBoundary fallback={<p>An error occured while loading the torrent.</p >}>
-            <Suspense fallback={<TorrentPendingFallback />}>
+        <ErrorBoundary fallback={<TorrentError />}>
+            <Suspense fallback={<TorrentLoading />}>
                 <Torrent torrentPromise={torrentPromise} />
             </Suspense>
-        </ErrorBoundary >
+        </ErrorBoundary>
     );
 };

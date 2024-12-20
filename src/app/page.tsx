@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react"
 import WebTorrent, { Instance } from "webtorrent"
 
-import { ClientWithFallback } from "./_components/ClientWithFallback";
+import { ClientWithFallback } from "./_page";
 
 const promiseWithTimeout = <T,>(promise: Promise<T>, ms: number): Promise<T> => (
     Promise.race<T>([
@@ -56,6 +56,7 @@ const Page = (): ReactNode => {
     const [clientPromise, setClientPromise] = useState<Promise<Instance>>()
 
     useEffect((): void => {
+        // Since `createClient` needs to be called client-side only, we have to call it in a `useEffect` hook.
         setClientPromise(createClient())
     }, [])
 

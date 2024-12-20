@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    experimental: {
+        reactCompiler: true,
+    },
     webpack: (config, { webpack }) => {
         return {
             ...config,
@@ -32,7 +35,6 @@ const nextConfig: NextConfig = {
             ]
         }
     }
-    /* config options here */
 };
 
 export default nextConfig;
