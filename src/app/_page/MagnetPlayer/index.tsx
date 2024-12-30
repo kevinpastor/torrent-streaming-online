@@ -9,7 +9,6 @@ interface Props {
 }
 
 export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
-    console.log("MagnetPlayer");
     const client: Instance = use(clientPromise);
     const [torrentPromise, setTorrentPromise] = useState<Promise<Torrent>>();
     const handleMagnetChange = async (magnet: string): Promise<void> => {
