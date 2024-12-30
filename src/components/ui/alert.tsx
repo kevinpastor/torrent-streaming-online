@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import { forwardRef, HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 
 import { cn } from "~/lib/utils";
 
@@ -36,7 +36,7 @@ const AlertTitle = forwardRef<
     HTMLParagraphElement,
     HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-    <h5
+    <div
         ref={ref}
         className={cn("mb-1 font-medium leading-none tracking-tight", className)}
         {...props}

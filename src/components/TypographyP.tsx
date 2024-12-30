@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from "react";
+import { type PropsWithChildren, type ReactNode } from "react";
 
 export const TypographyP = ({ children }: PropsWithChildren): ReactNode => (
     <p className="leading-7 [&:not(:first-child)]:mt-6">

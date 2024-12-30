@@ -1,5 +1,5 @@
-import { ReactNode, use, useState } from "react";
-import { Instance, Torrent } from "webtorrent";
+import { type ReactNode, use, useState } from "react";
+import { type Instance, type Torrent } from "webtorrent";
 
 import { Form } from "./Form";
 import { PlayerWithFallback } from "./PlayerWithFallback";
@@ -9,6 +9,7 @@ interface Props {
 }
 
 export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
+    console.log("MagnetPlayer");
     const client: Instance = use(clientPromise);
     const [torrentPromise, setTorrentPromise] = useState<Promise<Torrent>>();
     const handleMagnetChange = async (magnet: string): Promise<void> => {

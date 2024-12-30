@@ -1,7 +1,8 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
-import WebTorrent, { Instance } from "webtorrent";
+import { type ReactNode, useEffect, useState } from "react";
+// eslint-disable-next-line import/no-named-as-default
+import WebTorrent, { type Instance } from "webtorrent";
 
 import { MagnetPlayerWithFallback } from "./_page";
 import { KnownError, KnownErrorCode } from "~/utils/KnownError";
@@ -16,6 +17,9 @@ const promiseWithTimeout = <T,>(promise: Promise<T>, ms: number): Promise<T> => 
 );
 
 const createClient = async (): Promise<Instance> => {
+    await new Promise((resolve): void => {
+        setTimeout(resolve, 5000);
+    });
     const registration: ServiceWorkerRegistration = await navigator.serviceWorker.register("/sw.min.js");
     const serviceWorker: ServiceWorker | null = registration.installing || registration.waiting || registration.active;
     if (serviceWorker === null) {

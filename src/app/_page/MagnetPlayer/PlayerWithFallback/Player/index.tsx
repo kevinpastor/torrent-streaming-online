@@ -1,8 +1,8 @@
 import { MediaPlayer, MediaProvider } from "@vidstack/react";
 import { defaultLayoutIcons, DefaultVideoLayout } from "@vidstack/react/player/layouts/default";
 import { CircleXIcon } from "lucide-react";
-import { ReactNode, use, useState } from "react";
-import { Torrent as ITorrent, TorrentFile } from "webtorrent";
+import { type ReactNode, use, useState } from "react";
+import { type Torrent as ITorrent, type TorrentFile } from "webtorrent";
 
 import { FileSelector, isFormatSupported } from "./FileSelector";
 

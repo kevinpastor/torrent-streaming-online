@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 export const PlayerInitial = (): ReactNode => (
     <div className="col-span-3 aspect-video rounded-md border bg-black text-card-foreground shadow flex flex-col items-center justify-center">

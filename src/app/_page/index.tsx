@@ -1,6 +1,6 @@
-import { ReactNode, Suspense } from "react";
+import { type ReactNode, Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { Instance } from "webtorrent";
+import { type Instance } from "webtorrent";
 
 import { MagnetPlayer } from "./MagnetPlayer";
 import { MagnetPlayerLoading } from "./MagnetPlayerLoading";

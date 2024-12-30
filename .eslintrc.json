@@ -1,11 +1,19 @@
 {
     "extends": [
         "next/core-web-vitals",
-        "next/typescript"
+        "next/typescript",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
     ],
     "plugins": [
-        "@stylistic"
+        "@stylistic/eslint-plugin"
     ],
+    "settings": {
+        "import/resolver": {
+            "typescript": true,
+            "node": true
+        }
+    },
     "rules": {
         "@stylistic/indent": [
             "error",
@@ -18,6 +26,13 @@
         "@stylistic/semi": [
             "error",
             "always"
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+            "error",
+            {
+                "prefer": "type-imports",
+                "fixStyle": "inline-type-imports"
+            }
         ]
     }
 }

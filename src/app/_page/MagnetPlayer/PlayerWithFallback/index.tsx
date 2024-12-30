@@ -1,11 +1,16 @@
-import { ReactNode, Suspense } from "react";
+import { lazy, type ReactNode, Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { Torrent as ITorrent } from "webtorrent";
+import { type Torrent as ITorrent } from "webtorrent";
 
-import { Player } from "./Player";
 import { PlayerInitial } from "./PlayerInitial";
 import { PlayerLoading } from "./PlayerLoading";
 import { PlayerError } from "./PlayerError";
+
+const LazyPlayer = lazy(async (): Promise<{ default: typeof Player }> => {
+    const { Player } = await import("./Player");
+
+    return { default: Player };
+});
 
 interface Props {
     torrentPromise?: Promise<ITorrent>
@@ -21,7 +26,7 @@ export const PlayerWithFallback = ({ torrentPromise }: Props): ReactNode => {
     return (
         <ErrorBoundary FallbackComponent={PlayerError}>
             <Suspense fallback={<PlayerLoading />}>
-                <Player torrentPromise={torrentPromise} />
+                <LazyPlayer torrentPromise={torrentPromise} />
             </Suspense>
         </ErrorBoundary>
     );

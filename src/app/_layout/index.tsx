@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from "react";
+import { type PropsWithChildren, type ReactNode } from "react";
 
 import { Faq } from "./Faq";
 import { Title } from "./Title";

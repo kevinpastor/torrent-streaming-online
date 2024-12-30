@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { TorrentFile } from "webtorrent";
+import { type ReactNode } from "react";
+import { type TorrentFile } from "webtorrent";
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 
