@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { type FallbackProps } from "react-error-boundary";
+
 import { KnownError, KnownErrorCode } from "~/utils/KnownError";
 
 export const MagnetPlayerError = ({ error }: FallbackProps): ReactNode => {

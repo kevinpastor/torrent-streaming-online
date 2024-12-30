@@ -1,8 +1,8 @@
 "use client";
 
-import { Root, Group, Value, Trigger, Icon, ScrollUpButton, ScrollDownButton, Content, Portal, Label, Item, ItemIndicator, ItemText, Separator, Viewport } from "@radix-ui/react-select";
+import { Content, Group, Icon, Item, ItemIndicator, ItemText, Label, Portal, Root, ScrollDownButton, ScrollUpButton, Separator, Trigger, Value, Viewport } from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import { forwardRef, type ElementRef, type ComponentPropsWithoutRef } from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 
 import { cn } from "~/lib/utils";
 
@@ -147,13 +147,13 @@ SelectSeparator.displayName = Separator.displayName;
 
 export {
     Select,
-    SelectGroup,
-    SelectValue,
-    SelectTrigger,
     SelectContent,
-    SelectLabel,
+    SelectGroup,
     SelectItem,
-    SelectSeparator,
-    SelectScrollUpButton,
+    SelectLabel,
     SelectScrollDownButton,
+    SelectScrollUpButton,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue,
 };

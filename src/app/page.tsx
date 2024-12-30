@@ -4,8 +4,9 @@ import { type ReactNode, useEffect, useState } from "react";
 // eslint-disable-next-line import/no-named-as-default
 import WebTorrent, { type Instance } from "webtorrent";
 
-import { MagnetPlayerWithFallback } from "./_page";
 import { KnownError, KnownErrorCode } from "~/utils/KnownError";
+
+import { MagnetPlayerWithFallback } from "./_page";
 
 const promiseWithTimeout = <T,>(promise: Promise<T>, ms: number): Promise<T> => (
     Promise.race<T>([

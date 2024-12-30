@@ -3,8 +3,8 @@ import { ErrorBoundary } from "react-error-boundary";
 import { type Instance } from "webtorrent";
 
 import { MagnetPlayer } from "./MagnetPlayer";
-import { MagnetPlayerLoading } from "./MagnetPlayerLoading";
 import { MagnetPlayerError } from "./MagnetPlayerError";
+import { MagnetPlayerLoading } from "./MagnetPlayerLoading";
 
 interface Props {
     clientPromise?: Promise<Instance>

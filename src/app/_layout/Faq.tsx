@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+
 import { TypographyH2 } from "~/components/TypographyH2";
 import { TypographyH3 } from "~/components/TypographyH3";
 import { TypographyP } from "~/components/TypographyP";

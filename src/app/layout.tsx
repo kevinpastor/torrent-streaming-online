@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
-import { GeistSans } from "geist/font/sans";
-// eslint-disable-next-line import/no-unresolved
 import { GeistMono } from "geist/font/mono";
+// eslint-disable-next-line import/no-unresolved
+import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { type PropsWithChildren, type ReactNode } from "react";
 
