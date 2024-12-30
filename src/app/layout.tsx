@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 
 import { Layout } from "./_layout";
 
-import "./global.css"
+import "./global.css";
 
 const RootLayout = ({ children }: Readonly<PropsWithChildren>): ReactNode => (
     <html
@@ -17,6 +17,6 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>): ReactNode => (
             </Layout>
         </body>
     </html>
-)
+);
 
 export default RootLayout;

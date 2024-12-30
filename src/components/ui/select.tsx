@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { Root, Group, Value, Trigger, Icon, ScrollUpButton, ScrollDownButton, Content, Portal, Label, Item, ItemIndicator, ItemText, Separator, Viewport } from "@radix-ui/react-select"
-import { Check, ChevronDown, ChevronUp } from "lucide-react"
-import { forwardRef, ElementRef, ComponentPropsWithoutRef } from "react"
+import { Root, Group, Value, Trigger, Icon, ScrollUpButton, ScrollDownButton, Content, Portal, Label, Item, ItemIndicator, ItemText, Separator, Viewport } from "@radix-ui/react-select";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { forwardRef, ElementRef, ComponentPropsWithoutRef } from "react";
 
-import { cn } from "~/lib/utils"
+import { cn } from "~/lib/utils";
 
-const Select = Root
+const Select = Root;
 
-const SelectGroup = Group
+const SelectGroup = Group;
 
-const SelectValue = Value
+const SelectValue = Value;
 
 const SelectTrigger = forwardRef<
     ElementRef<typeof Trigger>,
@@ -29,8 +29,8 @@ const SelectTrigger = forwardRef<
             <ChevronDown className="h-4 w-4 opacity-50" />
         </Icon>
     </Trigger>
-))
-SelectTrigger.displayName = Trigger.displayName
+));
+SelectTrigger.displayName = Trigger.displayName;
 
 const SelectScrollUpButton = forwardRef<
     ElementRef<typeof ScrollUpButton>,
@@ -46,8 +46,8 @@ const SelectScrollUpButton = forwardRef<
     >
         <ChevronUp className="h-4 w-4" />
     </ScrollUpButton>
-))
-SelectScrollUpButton.displayName = ScrollUpButton.displayName
+));
+SelectScrollUpButton.displayName = ScrollUpButton.displayName;
 
 const SelectScrollDownButton = forwardRef<
     ElementRef<typeof ScrollDownButton>,
@@ -63,9 +63,9 @@ const SelectScrollDownButton = forwardRef<
     >
         <ChevronDown className="h-4 w-4" />
     </ScrollDownButton>
-))
+));
 SelectScrollDownButton.displayName =
-    ScrollDownButton.displayName
+    ScrollDownButton.displayName;
 
 const SelectContent = forwardRef<
     ElementRef<typeof Content>,
@@ -96,8 +96,8 @@ const SelectContent = forwardRef<
             <SelectScrollDownButton />
         </Content>
     </Portal>
-))
-SelectContent.displayName = Content.displayName
+));
+SelectContent.displayName = Content.displayName;
 
 const SelectLabel = forwardRef<
     ElementRef<typeof Label>,
@@ -108,8 +108,8 @@ const SelectLabel = forwardRef<
         className={cn("px-2 py-1.5 text-sm font-semibold", className)}
         {...props}
     />
-))
-SelectLabel.displayName = Label.displayName
+));
+SelectLabel.displayName = Label.displayName;
 
 const SelectItem = forwardRef<
     ElementRef<typeof Item>,
@@ -130,8 +130,8 @@ const SelectItem = forwardRef<
         </span>
         <ItemText>{children}</ItemText>
     </Item>
-))
-SelectItem.displayName = Item.displayName
+));
+SelectItem.displayName = Item.displayName;
 
 const SelectSeparator = forwardRef<
     ElementRef<typeof Separator>,
@@ -142,8 +142,8 @@ const SelectSeparator = forwardRef<
         className={cn("-mx-1 my-1 h-px bg-muted", className)}
         {...props}
     />
-))
-SelectSeparator.displayName = Separator.displayName
+));
+SelectSeparator.displayName = Separator.displayName;
 
 export {
     Select,
@@ -156,4 +156,4 @@ export {
     SelectSeparator,
     SelectScrollUpButton,
     SelectScrollDownButton,
-}
+};

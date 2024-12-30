@@ -1,7 +1,7 @@
 import { Spinner } from "@vidstack/react";
 import { ReactNode } from "react";
 
-export const TorrentLoading = (): ReactNode => (
+export const PlayerLoading = (): ReactNode => (
     <div className="pointer-events-none inset-0 z-50 flex w-full aspect-video items-center justify-center border rounded-md bg-black">
         <Spinner.Root
             className="text-white duration-1000 ease-linear animate-spin"

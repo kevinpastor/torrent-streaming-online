@@ -2,5 +2,22 @@
     "extends": [
         "next/core-web-vitals",
         "next/typescript"
-    ]
+    ],
+    "plugins": [
+        "@stylistic"
+    ],
+    "rules": {
+        "@stylistic/indent": [
+            "error",
+            4
+        ],
+        "@stylistic/quotes": [
+            "error",
+            "double"
+        ],
+        "@stylistic/semi": [
+            "error",
+            "always"
+        ]
+    }
 }

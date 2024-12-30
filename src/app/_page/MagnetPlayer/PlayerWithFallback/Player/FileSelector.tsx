@@ -1,7 +1,7 @@
-import { ReactNode } from "react"
-import { TorrentFile } from "webtorrent"
+import { ReactNode } from "react";
+import { TorrentFile } from "webtorrent";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 
 interface Format {
     extension: string
@@ -29,7 +29,7 @@ export const supportedFormats: Array<Format> = [
         extension: ".webm",
         mimeType: "video/webm"
     }
-]
+];
 
 export const isFormatSupported = (file: TorrentFile): boolean => (
     supportedFormats.some(({ extension, mimeType }) => (
@@ -37,7 +37,7 @@ export const isFormatSupported = (file: TorrentFile): boolean => (
         // At runtime, `type` is defined.
         || ("type" in file && file.type === mimeType)
     ))
-)
+);
 
 interface Props {
     files: TorrentFile[]
@@ -52,7 +52,7 @@ export const FileSelector = ({
 }: Props): ReactNode => {
     const file: TorrentFile | undefined = files.find(
         ({ path }: TorrentFile): boolean => (path === selectedPath)
-    )
+    );
 
     if (file === undefined) {
         return (
@@ -61,7 +61,7 @@ export const FileSelector = ({
                     TODO
                 </span>
             </div>
-        )
+        );
     }
 
     return (
@@ -85,5 +85,5 @@ export const FileSelector = ({
                 }
             </SelectContent>
         </Select>
-    )
-}
+    );
+};
