@@ -27,6 +27,7 @@
             "error",
             "always"
         ],
+        "@stylistic/comma-dangle": "error",
         "@typescript-eslint/consistent-type-imports": [
             "error",
             {

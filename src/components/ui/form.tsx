@@ -9,7 +9,7 @@ import {
     type FieldPath,
     type FieldValues,
     FormProvider,
-    useFormContext,
+    useFormContext
 } from "react-hook-form";
 
 import { Label } from "~/components/ui/label";
@@ -60,7 +60,7 @@ const useFormField = () => {
         formItemId: `${id}-form-item`,
         formDescriptionId: `${id}-form-item-description`,
         formMessageId: `${id}-form-item-message`,
-        ...fieldState,
+        ...fieldState
     };
 };
 
@@ -174,5 +174,5 @@ export {
     FormItem,
     FormLabel,
     FormMessage,
-    useFormField,
+    useFormField
 };

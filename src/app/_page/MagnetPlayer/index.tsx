@@ -10,6 +10,7 @@ interface Props {
 
 export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
     const client: Instance = use(clientPromise);
+    const [key, setKey] = useState(0);
     const [torrentPromise, setTorrentPromise] = useState<Promise<Torrent>>();
     const handleMagnetChange = async (magnet: string): Promise<void> => {
         for (const torrent of client.torrents) {
@@ -20,6 +21,7 @@ export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
             client.add(magnet, resolve);
         });
 
+        setKey((key: number): number => (key + 1));
         setTorrentPromise(promise);
 
         try {
@@ -34,7 +36,11 @@ export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
     return (
         <div className="space-y-4">
             <Form onMagnetChange={handleMagnetChange} />
-            <PlayerWithFallback torrentPromise={torrentPromise} />
+            <PlayerWithFallback
+                // A key is used to force the player to re-render when a new torrent is added.
+                key={key}
+                torrentPromise={torrentPromise}
+            />
         </div>
     );
 };

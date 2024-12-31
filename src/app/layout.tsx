@@ -11,7 +11,7 @@ import "./global.css";
 
 export const metadata: Metadata = {
     title: "Torrent Streaming Online",
-    description: "Stream torrents on the web.",
+    description: "Stream torrents on the web."
 };
 
 const RootLayout = ({ children }: PropsWithChildren): ReactNode => (

@@ -1,7 +1,10 @@
 import { type PropsWithChildren, type ReactNode } from "react";
 
+import { Accordion } from "~/components/ui/accordion";
+
 import { CompatibilityAlert } from "./CompabilityAlert";
-import { Faq } from "./Faq";
+// import { Faq } from "./Faq";
+import { TermsOfService } from "./TermsOfService";
 import { Title } from "./Title";
 
 export const Layout = ({ children }: PropsWithChildren): ReactNode => (
@@ -9,6 +12,9 @@ export const Layout = ({ children }: PropsWithChildren): ReactNode => (
         <Title />
         <CompatibilityAlert />
         {children}
-        <Faq />
+        <Accordion type="single" collapsible>
+            {/* <Faq /> */}
+            <TermsOfService />
+        </Accordion>
     </div>
 );
