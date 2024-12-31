@@ -47,7 +47,7 @@ interface Props {
 
 export const FileSelector = ({
     files,
-    selectedPath,
+    selectedPath
     // onChange
 }: Props): ReactNode => {
     const file: TorrentFile | undefined = files.find(

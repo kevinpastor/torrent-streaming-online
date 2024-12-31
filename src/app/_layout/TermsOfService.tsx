@@ -29,7 +29,7 @@ export const TermsOfService = (): ReactNode => (
                 3. Disclaimer of Liability
             </TypographyH3>
             <TypographyP>
-                The Service is provided &quot;as-is&quot; and &quot;as available,&quot; without any warranties or guarantees, express or implied. The creators of the Service ("we," "us") disclaim all liability for any damages, losses, or legal consequences arising from your use of the Service. Specifically:
+                The Service is provided &quot;as-is&quot; and &quot;as available,&quot; without any warranties or guarantees, express or implied. The creators of the Service (&quot;we,&quot; &quot;us&quot;) disclaim all liability for any damages, losses, or legal consequences arising from your use of the Service. Specifically:
             </TypographyP>
             <TypographyP>
                 We do not monitor or control the content accessed via the Service.
