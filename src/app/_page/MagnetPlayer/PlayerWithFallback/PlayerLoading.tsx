@@ -7,24 +7,24 @@ export const PlayerLoading = (): ReactNode => {
     useTimeout(setTrue, 5000);
 
     return (
-        <div className="pointer-events-none inset-0 z-50 flex w-full aspect-video flex-col items-center justify-center gap-4 border rounded-md bg-black">
+        <div className="pointer-events-none aspect-video flex flex-col items-center justify-center space-y-4 border rounded-md bg-black">
             <Spinner.Root
-                className="text-white duration-1000 ease-linear animate-spin"
+                className="animate-spin"
                 size={84}
             >
                 <Spinner.Track
-                    className="opacity-25"
+                    className="text-muted"
                     width={8}
                 />
                 <Spinner.TrackFill
-                    className="opacity-75"
+                    className="text-foreground"
                     width={8}
                 />
             </Spinner.Root>
             {isSlow && (
-                <div>
+                <p className="text-sm text-muted-foreground">
                     Taking longer than expected. Ensure that the magnet link is correct.
-                </div>
+                </p>
             )}
         </div>
     );

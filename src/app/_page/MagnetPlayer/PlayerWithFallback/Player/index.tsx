@@ -1,10 +1,11 @@
 import { MediaPlayer, MediaProvider } from "@vidstack/react";
 import { type DefaultLayoutIcons, defaultLayoutIcons, DefaultVideoLayout } from "@vidstack/react/player/layouts/default";
-import { AArrowDownIcon, AArrowUpIcon, AirplayIcon, ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon, AudioLinesIcon, CaptionsIcon, CaptionsOff, CastIcon, CheckIcon, CirclePlayIcon, CircleXIcon, DownloadIcon, EyeIcon, EyeOffIcon, FastForwardIcon, LibraryIcon, MaximizeIcon, MinimizeIcon, PauseIcon, PersonStandingIcon, PictureInPicture2, PictureInPictureIcon, PlayIcon, RewindIcon, RotateCcwIcon, SettingsIcon, Volume1Icon, Volume2Icon, VolumeOffIcon } from "lucide-react";
+import { AArrowDownIcon, AArrowUpIcon, AirplayIcon, ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon, AudioLinesIcon, CaptionsIcon, CaptionsOff, CastIcon, CheckIcon, CirclePlayIcon, DownloadIcon, EyeIcon, EyeOffIcon, FastForwardIcon, LibraryIcon, MaximizeIcon, MinimizeIcon, PauseIcon, PersonStandingIcon, PictureInPicture2, PictureInPictureIcon, PlayIcon, RewindIcon, RotateCcwIcon, SettingsIcon, Volume1Icon, Volume2Icon, VolumeOffIcon } from "lucide-react";
 import { type ReactNode, use, useState } from "react";
 import { type Torrent as ITorrent, type TorrentFile } from "webtorrent";
 
 import { FileSelector, isFormatSupported } from "./FileSelector";
+import { UnsupportedFiles } from "./UnsupportedFiles";
 
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
@@ -89,12 +90,7 @@ export const Player = ({ torrentPromise }: Props): ReactNode => {
 
     if (url === undefined) {
         return (
-            <div className="aspect-video border rounded-md">
-                <div className="flex items-center justify-center gap-2 h-full text-base text-muted-foreground">
-                    <CircleXIcon className="h-4 w-4" />
-                    No supported video file found.
-                </div>
-            </div>
+            <UnsupportedFiles />
         );
     }
 

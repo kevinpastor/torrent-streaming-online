@@ -58,7 +58,7 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
         <FormProvider {...form}>
             <form
                 onSubmit={form.handleSubmit(handleSubmit)}
-                className="flex gap-4"
+                className="flex space-x-4"
             >
                 <FormField
                     control={form.control}

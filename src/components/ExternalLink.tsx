@@ -12,5 +12,4 @@ export const ExternalLink = ({ href, children }: PropsWithChildren<Props>): Reac
     >
         {children}
     </a>
-
 );

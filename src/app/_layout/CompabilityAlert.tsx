@@ -16,7 +16,7 @@ export const CompatibilityAlert = (): ReactNode => (
             <TypographyInlineCode>
                 libtorrent
             </TypographyInlineCode>
-            {" "}release for qBittorrent and Transmission to seed via WebRTC. (
+            {" "}release with Webtorrent support so that qBittorrent and Transmission can seed via WebRTC. (
             <ExternalLink href="https://github.com/arvidn/libtorrent/issues/7283">
                 1
             </ExternalLink>
