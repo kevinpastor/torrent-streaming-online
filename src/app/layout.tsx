@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 // eslint-disable-next-line import/no-unresolved
 import { GeistMono } from "geist/font/mono";
 // eslint-disable-next-line import/no-unresolved
@@ -23,6 +25,8 @@ const RootLayout = ({ children }: PropsWithChildren): ReactNode => (
             <Layout>
                 {children}
             </Layout>
+            <Analytics />
+            <SpeedInsights />
         </body>
     </html>
 );
