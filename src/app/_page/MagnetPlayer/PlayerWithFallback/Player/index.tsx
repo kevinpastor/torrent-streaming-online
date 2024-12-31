@@ -90,7 +90,7 @@ export const Player = ({ torrentPromise }: Props): ReactNode => {
     if (url === undefined) {
         return (
             <div className="aspect-video border rounded-md">
-                <div className="flex items-center justify-center gap-2 h-full text-sm text-gray-400">
+                <div className="flex items-center justify-center gap-2 h-full text-base text-muted-foreground">
                     <CircleXIcon className="h-4 w-4" />
                     No supported video file found.
                 </div>

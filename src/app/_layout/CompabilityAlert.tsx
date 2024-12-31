@@ -9,7 +9,7 @@ export const CompatibilityAlert = (): ReactNode => (
     <Alert>
         <TriangleAlertIcon className="h-4 w-4" />
         <AlertTitle>
-            Limited support
+            Limited Support
         </AlertTitle>
         <AlertDescription>
             Does not support UDP/TCP peers, meaning that most torrents will not work. Waiting for a{" "}

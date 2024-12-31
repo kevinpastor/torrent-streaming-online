@@ -1,12 +1,12 @@
 import { type ReactNode } from "react";
 
 export const PlayerInitial = (): ReactNode => (
-    <div className="col-span-3 aspect-video rounded-md border bg-black text-card-foreground shadow flex flex-col items-center justify-center">
-        <p className="leading-7">
-            No torrent loaded.
+    <div className="col-span-3 aspect-video rounded-md border bg-black shadow flex flex-col items-center justify-center">
+        <p className="text-sm text-foreground">
+            No torrent loaded
         </p>
-        <p className="leading-7">
-            Load a torrent by pasting a magnet link above to start watching.
+        <p className="text-sm text-muted-foreground">
+            Load a magnet link to start streaming.
         </p>
     </div>
 );

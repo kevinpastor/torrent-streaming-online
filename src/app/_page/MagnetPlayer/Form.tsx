@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { CloudDownloadIcon } from "lucide-react";
 import { type ReactElement, type ReactNode, useEffect } from "react";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { z } from "zod";
@@ -84,6 +85,7 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
                     type="submit"
                     disabled={onMagnetChange === undefined}
                 >
+                    <CloudDownloadIcon />
                     Load
                 </Button>
             </form>

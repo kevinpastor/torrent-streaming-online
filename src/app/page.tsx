@@ -11,7 +11,7 @@ const Page = (): ReactNode => {
     const [clientPromise, setClientPromise] = useState<Promise<Instance>>();
 
     useEffect((): void => {
-        // Since `createClient` needs to be called client-side only, we have to call it in a `useEffect` hook.
+        // Since `createClient` can only be called client-side, we have to call it in a `useEffect` hook.
         setClientPromise(createClient());
     }, []);
 
