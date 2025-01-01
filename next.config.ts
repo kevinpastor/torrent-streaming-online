@@ -2,14 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     experimental: {
-        reactCompiler: true,
+        reactCompiler: true
     },
     webpack: (config, { webpack }) => {
         return {
             ...config,
             resolve: {
                 ...config?.resolve,
-                aliasFields: [...config?.resolve?.aliasFields ?? [], 'browser'],
+                aliasFields: [...config?.resolve?.aliasFields ?? [], "browser"],
                 alias: {
                     ...config?.resolve?.alias,
                     "./lib/conn-pool.js": false,
@@ -24,16 +24,16 @@ const nextConfig: NextConfig = {
                     "net": false,
                     "os": false,
                     "ut_pex": false,
-                    path: 'path-esm'
+                    path: "path-esm"
                 }
             },
             plugins: [
                 ...config?.plugins ?? [],
                 new webpack.DefinePlugin({
-                    global: 'globalThis'
+                    global: "globalThis"
                 })
             ]
-        }
+        };
     }
 };
 

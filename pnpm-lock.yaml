@@ -78,6 +78,9 @@ importers:
       usehooks-ts:
         specifier: ^3.1.0
         version: 3.1.0(react@19.0.0)
+      valibot:
+        specifier: 1.0.0-beta.9
+        version: 1.0.0-beta.9(typescript@5.7.2)
       webtorrent:
         specifier: ^2.5.7
         version: 2.5.7
@@ -2905,6 +2908,14 @@ packages:
     resolution: {integrity: sha512-sWTrWYXPhhWJh+cS2baPzhaZc89zwlWCfwSthUjGhLkZztyPhcQllo+XVVCbNGi7dhyRlxkWxN4NKU6FbA9Y8w==}
     engines: {node: '>=8.12'}
     hasBin: true
+
+  valibot@1.0.0-beta.9:
+    resolution: {integrity: sha512-yEX8gMAZ2R1yI2uwOO4NCtVnJQx36zn3vD0omzzj9FhcoblvPukENIiRZXKZwCnqSeV80bMm8wNiGhQ0S8fiww==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   web-streams-polyfill@3.3.3:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
@@ -6025,6 +6036,10 @@ snapshots:
       timeout-refresh: 1.0.3
       unordered-set: 2.0.1
     optional: true
+
+  valibot@1.0.0-beta.9(typescript@5.7.2):
+    optionalDependencies:
+      typescript: 5.7.2
 
   web-streams-polyfill@3.3.3: {}
 
