@@ -1,0 +1,11 @@
+{
+    "name": "Torrent Streaming Online",
+    "short_name": "Torrent Streaming Online",
+    "description": "Stream torrents on the web.",
+    "start_url": "/",
+    "scope": "/",
+    "id": "/",
+    "display": "standalone",
+    "theme_color": "#fafafa",
+    "background_color": "#09090b"
+}

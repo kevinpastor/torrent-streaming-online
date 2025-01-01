@@ -6,7 +6,7 @@ import { Form } from "./MagnetPlayer/Form";
 import { PlayerInitial } from "./MagnetPlayer/PlayerWithFallback/PlayerInitial";
 
 export const MagnetPlayerLoading = (): ReactNode => (
-    <div className="space-y-4">
+    <>
         {/* <div className="flex gap-4">
             <div className="space-y-2 grow">
                 <Skeleton className="w-[82.13px] h-[16px] mt-2" />
@@ -17,5 +17,5 @@ export const MagnetPlayerLoading = (): ReactNode => (
         <Skeleton className="aspect-video" /> */}
         <Form />
         <PlayerInitial />
-    </div>
+    </>
 );

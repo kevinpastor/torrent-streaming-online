@@ -34,13 +34,13 @@ export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
     };
 
     return (
-        <div className="space-y-4">
+        <>
             <Form onMagnetChange={handleMagnetChange} />
             <PlayerWithFallback
                 // A key is used to force the player to re-render when a new torrent is added.
                 key={key}
                 torrentPromise={torrentPromise}
             />
-        </div>
+        </>
     );
 };

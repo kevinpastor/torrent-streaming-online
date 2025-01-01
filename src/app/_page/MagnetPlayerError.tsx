@@ -1,11 +1,11 @@
 import { type ReactNode } from "react";
 import { type FallbackProps } from "react-error-boundary";
 
-import { KnownError, KnownErrorCode } from "~/utils/KnownError";
+import { ErrorCode, KnownError } from "~/utils/KnownError";
 
 export const MagnetPlayerError = ({ error }: FallbackProps): ReactNode => {
     if (error instanceof KnownError) {
-        if (error.code === KnownErrorCode.ServiceWorkerUnsupported) {
+        if (error.code === ErrorCode.ServiceWorkerUnsupported) {
             return (
                 // TODO Improve this message.
                 <p>
