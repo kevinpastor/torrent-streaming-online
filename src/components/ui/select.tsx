@@ -2,20 +2,17 @@
 
 import { Content, Group, Icon, Item, ItemIndicator, ItemText, Label, Portal, Root, ScrollDownButton, ScrollUpButton, Separator, Trigger, Value, Viewport } from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithRef, type ReactNode } from "react";
 
 import { cn } from "~/lib/utils";
 
-const Select = Root;
+export const Select = Root;
 
-const SelectGroup = Group;
+export const SelectGroup = Group;
 
-const SelectValue = Value;
+export const SelectValue = Value;
 
-const SelectTrigger = forwardRef<
-    ElementRef<typeof Trigger>,
-    ComponentPropsWithoutRef<typeof Trigger>
->(({ className, children, ...props }, ref) => (
+export const SelectTrigger = ({ ref, className, children, ...props }: ComponentPropsWithRef<typeof Trigger>): ReactNode => (
     <Trigger
         ref={ref}
         className={cn(
@@ -29,13 +26,9 @@ const SelectTrigger = forwardRef<
             <ChevronDown className="h-4 w-4 opacity-50" />
         </Icon>
     </Trigger>
-));
-SelectTrigger.displayName = Trigger.displayName;
+);
 
-const SelectScrollUpButton = forwardRef<
-    ElementRef<typeof ScrollUpButton>,
-    ComponentPropsWithoutRef<typeof ScrollUpButton>
->(({ className, ...props }, ref) => (
+export const SelectScrollUpButton = ({ ref, className, ...props }: ComponentPropsWithRef<typeof ScrollUpButton>): ReactNode => (
     <ScrollUpButton
         ref={ref}
         className={cn(
@@ -46,13 +39,9 @@ const SelectScrollUpButton = forwardRef<
     >
         <ChevronUp className="h-4 w-4" />
     </ScrollUpButton>
-));
-SelectScrollUpButton.displayName = ScrollUpButton.displayName;
+);
 
-const SelectScrollDownButton = forwardRef<
-    ElementRef<typeof ScrollDownButton>,
-    ComponentPropsWithoutRef<typeof ScrollDownButton>
->(({ className, ...props }, ref) => (
+export const SelectScrollDownButton = ({ ref, className, ...props }: ComponentPropsWithRef<typeof ScrollDownButton>): ReactNode => (
     <ScrollDownButton
         ref={ref}
         className={cn(
@@ -63,14 +52,9 @@ const SelectScrollDownButton = forwardRef<
     >
         <ChevronDown className="h-4 w-4" />
     </ScrollDownButton>
-));
-SelectScrollDownButton.displayName =
-    ScrollDownButton.displayName;
+);
 
-const SelectContent = forwardRef<
-    ElementRef<typeof Content>,
-    ComponentPropsWithoutRef<typeof Content>
->(({ className, children, position = "popper", ...props }, ref) => (
+export const SelectContent = ({ ref, className, children, position = "popper", ...props }: ComponentPropsWithRef<typeof Content>): ReactNode => (
     <Portal>
         <Content
             ref={ref}
@@ -96,25 +80,17 @@ const SelectContent = forwardRef<
             <SelectScrollDownButton />
         </Content>
     </Portal>
-));
-SelectContent.displayName = Content.displayName;
+);
 
-const SelectLabel = forwardRef<
-    ElementRef<typeof Label>,
-    ComponentPropsWithoutRef<typeof Label>
->(({ className, ...props }, ref) => (
+export const SelectLabel = ({ ref, className, ...props }: ComponentPropsWithRef<typeof Label>): ReactNode => (
     <Label
         ref={ref}
         className={cn("px-2 py-1.5 text-sm font-semibold", className)}
         {...props}
     />
-));
-SelectLabel.displayName = Label.displayName;
+);
 
-const SelectItem = forwardRef<
-    ElementRef<typeof Item>,
-    ComponentPropsWithoutRef<typeof Item>
->(({ className, children, ...props }, ref) => (
+export const SelectItem = ({ ref, className, children, ...props }: ComponentPropsWithRef<typeof Item>): ReactNode => (
     <Item
         ref={ref}
         className={cn(
@@ -130,30 +106,12 @@ const SelectItem = forwardRef<
         </span>
         <ItemText>{children}</ItemText>
     </Item>
-));
-SelectItem.displayName = Item.displayName;
+);
 
-const SelectSeparator = forwardRef<
-    ElementRef<typeof Separator>,
-    ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
+export const SelectSeparator = ({ ref, className, ...props }: ComponentPropsWithRef<typeof Separator>): ReactNode => (
     <Separator
         ref={ref}
         className={cn("-mx-1 my-1 h-px bg-muted", className)}
         {...props}
     />
-));
-SelectSeparator.displayName = Separator.displayName;
-
-export {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectScrollDownButton,
-    SelectScrollUpButton,
-    SelectSeparator,
-    SelectTrigger,
-    SelectValue
-};
+);

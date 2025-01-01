@@ -1,17 +1,10 @@
-import { type HTMLAttributes } from "react";
+import { type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "~/lib/utils";
 
-function Skeleton({
-    className,
-    ...props
-}: HTMLAttributes<HTMLDivElement>) {
-    return (
-        <div
-            className={cn("animate-pulse rounded-md bg-primary/10", className)}
-            {...props}
-        />
-    );
-}
-
-export { Skeleton };
+export const Skeleton = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactNode => (
+    <div
+        className={cn("animate-pulse rounded-md bg-primary/10", className)}
+        {...props}
+    />
+);

@@ -1,22 +1,19 @@
 "use client";
 
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import * as React from "react";
+import { Content, Portal, Provider, Root, Trigger } from "@radix-ui/react-tooltip";
+import { type ComponentPropsWithRef, type ReactNode } from "react";
 
 import { cn } from "~/lib/utils";
 
-const TooltipProvider = TooltipPrimitive.Provider;
+export const TooltipProvider = Provider;
 
-const Tooltip = TooltipPrimitive.Root;
+export const Tooltip = Root;
 
-const TooltipTrigger = TooltipPrimitive.Trigger;
+export const TooltipTrigger = Trigger;
 
-const TooltipContent = React.forwardRef<
-    React.ElementRef<typeof TooltipPrimitive.Content>,
-    React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-    <TooltipPrimitive.Portal>
-        <TooltipPrimitive.Content
+export const TooltipContent = ({ ref, className, sideOffset = 4, ...props }: ComponentPropsWithRef<typeof Content>): ReactNode => (
+    <Portal>
+        <Content
             ref={ref}
             sideOffset={sideOffset}
             className={cn(
@@ -25,8 +22,5 @@ const TooltipContent = React.forwardRef<
             )}
             {...props}
         />
-    </TooltipPrimitive.Portal>
-));
-TooltipContent.displayName = TooltipPrimitive.Content.displayName;
-
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };
+    </Portal>
+);
