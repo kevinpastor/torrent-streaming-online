@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import { StatsInitial } from "./Player/StatsInitial";
+import { StatsInitial } from "./Player/Stats/StatsInitial";
 
 export const PlayerInitial = (): ReactNode => (
     <>

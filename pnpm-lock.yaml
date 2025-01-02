@@ -72,6 +72,9 @@ importers:
       '@stylistic/eslint-plugin':
         specifier: ^2.12.1
         version: 2.12.1(eslint@8.57.1)(typescript@5.7.2)
+      '@types/bittorrent-protocol':
+        specifier: ^3.1.6
+        version: 3.1.6
       '@types/node':
         specifier: ^20
         version: 20.17.9
@@ -3503,7 +3506,7 @@ snapshots:
     dependencies:
       debug: 4.4.0
       queue-microtask: 1.2.3
-      streamx: 2.20.2
+      streamx: 2.21.1
       uint8-util: 2.2.5
       ws: 8.18.0(bufferutil@4.0.9)(utf-8-validate@6.0.5)
     transitivePeerDependencies:
@@ -3863,7 +3866,7 @@ snapshots:
       bitfield: 4.2.0
       debug: 4.4.0
       rc4: 0.1.5
-      streamx: 2.20.2
+      streamx: 2.21.1
       throughput: 1.0.1
       uint8-util: 2.2.5
       unordered-array-remove: 1.0.2

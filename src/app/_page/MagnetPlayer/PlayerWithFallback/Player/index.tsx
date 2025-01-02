@@ -5,7 +5,7 @@ import { type ReactNode, use, useState } from "react";
 import { type Torrent, type TorrentFile } from "webtorrent";
 
 import { FileSelector, isFormatSupported } from "./FileSelector";
-import { Stats } from "./Stats";
+import { Stats } from "./Stats/Stats";
 import { UnsupportedFiles } from "./UnsupportedFiles";
 
 import "@vidstack/react/player/styles/default/theme.css";

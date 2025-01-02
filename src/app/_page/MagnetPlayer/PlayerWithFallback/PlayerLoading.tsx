@@ -2,7 +2,7 @@ import { Spinner } from "@vidstack/react";
 import { type ReactNode } from "react";
 import { useBoolean, useTimeout } from "usehooks-ts";
 
-import { StatsInitial } from "./Player/StatsInitial";
+import { StatsInitial } from "./Player/Stats/StatsInitial";
 
 export const PlayerLoading = (): ReactNode => {
     const { value: isSlow, setTrue } = useBoolean();
