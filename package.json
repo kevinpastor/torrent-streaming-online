@@ -9,50 +9,40 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@hookform/resolvers": "^3.9.1",
         "@radix-ui/react-accordion": "^1.2.2",
         "@radix-ui/react-label": "^2.1.1",
-        "@radix-ui/react-select": "^2.1.2",
-        "@radix-ui/react-slot": "^1.1.0",
+        "@radix-ui/react-select": "^2.1.4",
+        "@radix-ui/react-slot": "^1.1.1",
         "@radix-ui/react-tooltip": "^1.1.6",
         "@vercel/analytics": "^1.4.1",
         "@vercel/speed-insights": "^1.1.0",
         "@vidstack/react": "^1.12.12",
-        "babel-plugin-react-compiler": "19.0.0-beta-201e55d-20241215",
-        "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "geist": "^1.3.1",
-        "lucide-react": "^0.468.0",
-        "next": "^15.1.1",
+        "lucide-react": "^0.469.0",
+        "next": "^15.1.3",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "react-error-boundary": "^4.1.2",
-        "react-hook-form": "^7.54.1",
-        "tailwind-merge": "^2.5.5",
+        "react-error-boundary": "^5.0.0",
+        "tailwind-merge": "^2.6.0",
         "tailwindcss-animate": "^1.0.7",
         "usehooks-ts": "^3.1.0",
-        "valibot": "1.0.0-beta.9",
-        "webtorrent": "^2.5.7",
-        "zod": "^3.24.1"
+        "webtorrent": "^2.5.11"
     },
     "devDependencies": {
+        "@next/bundle-analyzer": "^15.1.3",
         "@stylistic/eslint-plugin": "^2.12.1",
         "@types/node": "^20",
-        "@types/react": "^19.0.1",
+        "@types/react": "^19.0.2",
         "@types/react-dom": "^19.0.2",
         "@types/webtorrent": "^0.110.0",
         "autoprefixer": "^10.4.20",
+        "babel-plugin-react-compiler": "19.0.0-beta-55955c9-20241229",
         "eslint": "^8",
-        "eslint-config-next": "^15.1.1",
+        "eslint-config-next": "^15.1.3",
         "eslint-plugin-import": "^2.31.0",
         "postcss": "^8.4.49",
-        "tailwindcss": "^3.4.16",
-        "typescript": "^5"
-    },
-    "pnpm": {
-        "overrides": {
-            "@types/react": "19.0.1",
-            "@types/react-dom": "19.0.2"
-        }
+        "tailwindcss": "^3.4.17",
+        "typescript": "^5.7.2"
     }
 }
