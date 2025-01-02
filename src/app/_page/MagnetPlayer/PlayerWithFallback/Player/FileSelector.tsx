@@ -32,7 +32,7 @@ export const supportedFormats: Array<Format> = [
 ];
 
 export const isFormatSupported = (file: TorrentFile): boolean => (
-    supportedFormats.some(({ extension, mimeType }) => (
+    supportedFormats.some(({ extension, mimeType }: Format): boolean => (
         file.path.endsWith(extension)
         // At runtime, `type` is defined.
         || ("type" in file && file.type === mimeType)
@@ -47,8 +47,8 @@ interface Props {
 
 export const FileSelector = ({
     files,
-    selectedPath
-    // onChange
+    selectedPath,
+    onChange: handleChange
 }: Props): ReactNode => {
     const file: TorrentFile | undefined = files.find(
         ({ path }: TorrentFile): boolean => (path === selectedPath)
@@ -65,14 +65,14 @@ export const FileSelector = ({
     }
 
     return (
-        <Select>
-            <SelectTrigger className="mr-2">
+        <Select onValueChange={handleChange}>
+            <SelectTrigger className="mr-2 bg-background">
                 <SelectValue placeholder={file.path} />
             </SelectTrigger>
             <SelectContent>
                 {files
-                    .sort(({ path: a }, { path: b }) => (a.localeCompare(b)))
-                    .map((file) => (
+                    .sort(({ path: a }: TorrentFile, { path: b }: TorrentFile): number => (a.localeCompare(b)))
+                    .map((file: TorrentFile): ReactNode => (
                         <SelectItem
                             key={file.path}
                             value={file.path}
@@ -80,7 +80,6 @@ export const FileSelector = ({
                         >
                             {file.path}
                         </SelectItem>
-
                     ))
                 }
             </SelectContent>

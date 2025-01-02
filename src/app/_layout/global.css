@@ -36,6 +36,21 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply font-sans antialiased bg-background text-foreground;
     }
+
+    /*
+    ::-webkit-scrollbar {
+        @apply w-2;
+    }
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-background;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply bg-border;
+        @apply rounded;
+    }
+    */
 }

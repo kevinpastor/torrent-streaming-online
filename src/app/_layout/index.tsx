@@ -20,16 +20,19 @@ export const Layout = ({ children }: PropsWithChildren): ReactNode => (
         lang="en"
         className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-        <body className="max-w-5xl mx-auto p-4 space-y-4">
-            <Title />
-            <CompatibilityAlert />
-            {children}
-            <Accordion type="single" collapsible>
-                {/* <Faq /> */}
-                <TermsOfService />
-            </Accordion>
-            <Analytics />
-            <SpeedInsights />
+        <body>
+            {/* A wrapping div is necessary in order to get proper scroll lock from Radix. */}
+            <div className="max-w-5xl mx-auto p-4 space-y-4">
+                <Title />
+                <CompatibilityAlert />
+                {children}
+                <Accordion type="single" collapsible>
+                    {/* <Faq /> */}
+                    <TermsOfService />
+                </Accordion>
+                <Analytics />
+                <SpeedInsights />
+            </div>
         </body>
     </html>
 );
