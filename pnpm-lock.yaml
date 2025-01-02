@@ -72,9 +72,6 @@ importers:
       '@stylistic/eslint-plugin':
         specifier: ^2.12.1
         version: 2.12.1(eslint@8.57.1)(typescript@5.7.2)
-      '@types/bittorrent-protocol':
-        specifier: ^3.1.6
-        version: 3.1.6
       '@types/node':
         specifier: ^20
         version: 20.17.9

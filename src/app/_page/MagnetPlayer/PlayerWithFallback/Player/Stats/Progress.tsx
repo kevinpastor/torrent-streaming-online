@@ -10,10 +10,10 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "~/comp
 const useProgress = (torrent: Torrent): number => {
     const progress: number = useSyncExternalStore(
         (onStoreChange: () => void): (() => void) => {
-            torrent.addListener("download", onStoreChange);
+            const intervalId = setInterval(onStoreChange, 1000);
 
             return (): void => {
-                torrent.removeListener("download", onStoreChange);
+                clearInterval(intervalId);
             };
         },
         (): number => (torrent.progress)

@@ -1,4 +1,3 @@
-import { type Wire } from "bittorrent-protocol";
 import { UsersIcon } from "lucide-react";
 import { type ReactNode, useSyncExternalStore } from "react";
 import { type Torrent } from "webtorrent";
@@ -12,31 +11,10 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "~/comp
 const usePeers = (torrent: Torrent): number => {
     const peers: number = useSyncExternalStore(
         (onStoreChange: () => void): (() => void) => {
-            const unsubscribes: Array<() => void> = [];
-            const listener = (wire: Wire): void => {
-                console.log("open", wire.peerId);
-                const subListener = (): void => {
-                    console.log("closed", wire.peerId);
-                    onStoreChange();
-                };
-                wire.on("close", subListener);
-
-                const unsubscribe = (): void => {
-                    console.log("unsubscribe", wire.peerId);
-                    wire.removeListener("close", subListener);
-                };
-                unsubscribes.push(unsubscribe);
-
-                onStoreChange();
-            };
-            torrent.on("wire", listener);
+            const intervalId = setInterval(onStoreChange, 1000);
 
             return (): void => {
-                console.log("unsubscribing");
-                torrent.removeListener("wire", listener);
-                for (const unsubscribe of unsubscribes) {
-                    unsubscribe();
-                }
+                clearInterval(intervalId);
             };
         },
         (): number => (torrent.numPeers - 1)

@@ -11,10 +11,10 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "~/comp
 const useDownloadSpeed = (torrent: Torrent): number => {
     const downloadSpeed: number = useSyncExternalStore(
         (onStoreChange: () => void): (() => void) => {
-            torrent.addListener("download", onStoreChange);
+            const intervalId = setInterval(onStoreChange, 1000);
 
             return (): void => {
-                torrent.removeListener("download", onStoreChange);
+                clearInterval(intervalId);
             };
         },
         (): number => (torrent.downloadSpeed)
