@@ -1,9 +1,9 @@
 import { TriangleAlertIcon } from "lucide-react";
 import { type ReactNode } from "react";
 
+import { Alert, AlertDescription, AlertTitle } from "~/components/Alert";
 import { ExternalLink } from "~/components/ExternalLink";
 import { TypographyInlineCode } from "~/components/TypographyInlineCode";
-import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 
 export const CompatibilityAlert = (): ReactNode => (
     <Alert>

@@ -1,12 +1,12 @@
 import { type ComponentPropsWithRef, type ReactNode } from "react";
 
-import { cn } from "~/lib/utils";
+import { classNames } from "~/utils/classNames";
 
 export const Alert = ({ ref, className, ...props }: ComponentPropsWithRef<"div">): ReactNode => (
     <div
         ref={ref}
         role="alert"
-        className={cn(
+        className={classNames(
             "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground",
             className
         )}
@@ -17,7 +17,7 @@ export const Alert = ({ ref, className, ...props }: ComponentPropsWithRef<"div">
 export const AlertTitle = ({ ref, className, ...props }: ComponentPropsWithRef<"div">): ReactNode => (
     <div
         ref={ref}
-        className={cn("mb-1 font-medium leading-none tracking-tight", className)}
+        className={classNames("mb-1 font-medium leading-none tracking-tight", className)}
         {...props}
     />
 );
@@ -25,7 +25,7 @@ export const AlertTitle = ({ ref, className, ...props }: ComponentPropsWithRef<"
 export const AlertDescription = ({ ref, className, ...props }: ComponentPropsWithRef<"div">): ReactNode => (
     <div
         ref={ref}
-        className={cn("text-sm [&_p]:leading-relaxed", className)}
+        className={classNames("text-sm [&_p]:leading-relaxed", className)}
         {...props}
     />
 );

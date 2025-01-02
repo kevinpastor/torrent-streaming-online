@@ -1,8 +1,8 @@
 import { type ReactNode } from "react";
 
+import { AccordionContent, AccordionItem, AccordionTrigger } from "~/components/Accordion";
 import { TypographyH3 } from "~/components/TypographyH3";
 import { TypographyP } from "~/components/TypographyP";
-import { AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
 
 export const TermsOfService = (): ReactNode => (
     <AccordionItem value="terms-of-service">

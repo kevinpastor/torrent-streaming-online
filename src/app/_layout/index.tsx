@@ -6,7 +6,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { type PropsWithChildren, type ReactNode } from "react";
 
-import { Accordion } from "~/components/ui/accordion";
+import { Accordion } from "~/components/Accordion";
 
 import { CompatibilityAlert } from "./CompabilityAlert";
 // import { Faq } from "./Faq";

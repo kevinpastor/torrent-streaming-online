@@ -4,7 +4,7 @@ import { Content, Group, Icon, Item, ItemIndicator, ItemText, Label, Portal, Roo
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import { type ComponentPropsWithRef, type ReactNode } from "react";
 
-import { cn } from "~/lib/utils";
+import { classNames } from "~/utils/classNames";
 
 export const Select = Root;
 
@@ -15,7 +15,7 @@ export const SelectValue = Value;
 export const SelectTrigger = ({ ref, className, children, ...props }: ComponentPropsWithRef<typeof Trigger>): ReactNode => (
     <Trigger
         ref={ref}
-        className={cn(
+        className={classNames(
             "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
             className
         )}
@@ -31,7 +31,7 @@ export const SelectTrigger = ({ ref, className, children, ...props }: ComponentP
 export const SelectScrollUpButton = ({ ref, className, ...props }: ComponentPropsWithRef<typeof ScrollUpButton>): ReactNode => (
     <ScrollUpButton
         ref={ref}
-        className={cn(
+        className={classNames(
             "flex cursor-default items-center justify-center py-1",
             className
         )}
@@ -44,7 +44,7 @@ export const SelectScrollUpButton = ({ ref, className, ...props }: ComponentProp
 export const SelectScrollDownButton = ({ ref, className, ...props }: ComponentPropsWithRef<typeof ScrollDownButton>): ReactNode => (
     <ScrollDownButton
         ref={ref}
-        className={cn(
+        className={classNames(
             "flex cursor-default items-center justify-center py-1",
             className
         )}
@@ -58,7 +58,7 @@ export const SelectContent = ({ ref, className, children, position = "popper", .
     <Portal>
         <Content
             ref={ref}
-            className={cn(
+            className={classNames(
                 "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
                 position === "popper" &&
                 "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
@@ -69,7 +69,7 @@ export const SelectContent = ({ ref, className, children, position = "popper", .
         >
             <SelectScrollUpButton />
             <Viewport
-                className={cn(
+                className={classNames(
                     "p-1",
                     position === "popper" &&
                     "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
@@ -85,7 +85,7 @@ export const SelectContent = ({ ref, className, children, position = "popper", .
 export const SelectLabel = ({ ref, className, ...props }: ComponentPropsWithRef<typeof Label>): ReactNode => (
     <Label
         ref={ref}
-        className={cn("px-2 py-1.5 text-sm font-semibold", className)}
+        className={classNames("px-2 py-1.5 text-sm font-semibold", className)}
         {...props}
     />
 );
@@ -93,7 +93,7 @@ export const SelectLabel = ({ ref, className, ...props }: ComponentPropsWithRef<
 export const SelectItem = ({ ref, className, children, ...props }: ComponentPropsWithRef<typeof Item>): ReactNode => (
     <Item
         ref={ref}
-        className={cn(
+        className={classNames(
             "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
             className
         )}
@@ -111,7 +111,7 @@ export const SelectItem = ({ ref, className, children, ...props }: ComponentProp
 export const SelectSeparator = ({ ref, className, ...props }: ComponentPropsWithRef<typeof Separator>): ReactNode => (
     <Separator
         ref={ref}
-        className={cn("-mx-1 my-1 h-px bg-muted", className)}
+        className={classNames("-mx-1 my-1 h-px bg-muted", className)}
         {...props}
     />
 );

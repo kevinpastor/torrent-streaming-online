@@ -11,10 +11,10 @@
     "rsc": true,
     "tsx": true,
     "aliases": {
-        "utils": "~/lib/utils",
+        "utils": "~/utils/classNames",
         "components": "~/components",
-        "ui": "~/components/ui",
-        "lib": "~/lib",
+        "ui": "~/components",
+        "lib": "~/utils",
         "hooks": "~/hooks"
     },
     "iconLibrary": "lucide"

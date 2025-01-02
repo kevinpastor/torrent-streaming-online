@@ -4,14 +4,14 @@ import { Content, Header, Item, Root, Trigger } from "@radix-ui/react-accordion"
 import { ChevronDown } from "lucide-react";
 import { type ComponentPropsWithRef, type ReactNode } from "react";
 
-import { cn } from "~/lib/utils";
+import { classNames } from "~/utils/classNames";
 
 export const Accordion = Root;
 
 export const AccordionItem = ({ ref, className, ...props }: ComponentPropsWithRef<typeof Item>): ReactNode => (
     <Item
         ref={ref}
-        className={cn("border-b", className)}
+        className={classNames("border-b", className)}
         {...props}
     />
 );
@@ -20,7 +20,7 @@ export const AccordionTrigger = ({ ref, className, children, ...props }: Compone
     <Header className="flex">
         <Trigger
             ref={ref}
-            className={cn(
+            className={classNames(
                 "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline text-left [&[data-state=open]>svg]:rotate-180",
                 className
             )}
@@ -38,6 +38,6 @@ export const AccordionContent = ({ ref, className, children, ...props }: Compone
         className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
         {...props}
     >
-        <div className={cn("pb-4 pt-0", className)}>{children}</div>
+        <div className={classNames("pb-4 pt-0", className)}>{children}</div>
     </Content>
 );
