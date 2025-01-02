@@ -3,6 +3,7 @@ import { type ReactNode, useRef, useSyncExternalStore } from "react";
 import { type Torrent } from "webtorrent";
 
 import { Badge } from "~/components/Badge";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "~/components/Tooltip";
 
 interface TorrentState {
     /**
@@ -77,21 +78,57 @@ export const Stats = ({ torrent }: Props): ReactNode => {
 
     return (
         <div className="flex justify-center space-x-1">
-            <Badge className={torrentState.peers === 0 ? "text-destructive" : undefined}>
-                <UsersIcon className="w-4 h-4 mr-1" />
-                {torrentState.peers}
-            </Badge>
-            <Badge>
-                <ArrowDownIcon className="w-4 h-4 mr-1" />
-                {(torrentState.downloadSpeed / 1000000).toFixed(2)} MB/s
-            </Badge>
-            <Badge>
-                <ArrowUpIcon className="w-4 h-4 mr-1" />
-                {(torrentState.uploadSpeed / 1000000).toFixed(2)} MB/s
-            </Badge>
-            <Badge>
-                {(torrentState.progress * 100).toFixed(0)}%
-            </Badge>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Badge className={torrentState.peers === 0 ? "text-destructive" : undefined}>
+                            <UsersIcon className="w-4 h-4 mr-1" />
+                            {torrentState.peers}
+                        </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        Peers
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Badge>
+                            <ArrowDownIcon className="w-4 h-4 mr-1" />
+                            {(torrentState.downloadSpeed / 1000000).toFixed(2)} MB/s
+                        </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        Dowload Speed
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Badge>
+                            <ArrowUpIcon className="w-4 h-4 mr-1" />
+                            {(torrentState.uploadSpeed / 1000000).toFixed(2)} MB/s
+                        </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        Upload Speed
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Badge>
+                            {(torrentState.progress * 100).toFixed(0)}%
+                        </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        Progress
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
             {/* <Badge>
                 {(torrentState.timeRemaining / 1000 / 60).toFixed(0)} minutes remaining
                 </Badge> */}
