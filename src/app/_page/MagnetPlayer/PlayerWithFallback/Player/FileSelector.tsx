@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 import { type TorrentFile } from "webtorrent";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/Select";
+import { Select, SelectItem } from "~/components/Select";
 
 interface Format {
     extension: string
@@ -65,24 +65,23 @@ export const FileSelector = ({
     }
 
     return (
-        <Select onValueChange={handleChange}>
-            <SelectTrigger className="mr-2 bg-background">
-                <SelectValue placeholder={file.path} />
-            </SelectTrigger>
-            <SelectContent>
-                {files
-                    .sort(({ path: a }: TorrentFile, { path: b }: TorrentFile): number => (a.localeCompare(b)))
-                    .map((file: TorrentFile): ReactNode => (
-                        <SelectItem
-                            key={file.path}
-                            value={file.path}
+        <Select
+            defaultValue={file.path}
+            onValueChange={handleChange}
+            className="mr-2 bg-background"
+        >
+            {files
+                .sort(({ path: a }: TorrentFile, { path: b }: TorrentFile): number => (a.localeCompare(b)))
+                .map((file: TorrentFile): ReactNode => (
+                    <SelectItem
+                        key={file.path}
+                        value={file.path}
                             disabled={!isFormatSupported(file)}
-                        >
-                            {file.path}
-                        </SelectItem>
-                    ))
-                }
-            </SelectContent>
+                    >
+                        {file.path}
+                    </SelectItem>
+                ))
+            }
         </Select>
     );
 };
