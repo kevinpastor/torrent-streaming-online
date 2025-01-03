@@ -41,47 +41,29 @@ export const isFormatSupported = (file: TorrentFile): boolean => (
 
 interface Props {
     files: TorrentFile[]
-    selectedPath?: string
+    selectedFilePath: string
     onChange: (path: string) => void
 }
 
 export const FileSelector = ({
     files,
-    selectedPath,
+    selectedFilePath,
     onChange: handleChange
-}: Props): ReactNode => {
-    const file: TorrentFile | undefined = files.find(
-        ({ path }: TorrentFile): boolean => (path === selectedPath)
-    );
-
-    if (file === undefined) {
-        return (
-            <div className="w-full aspect-video rounded-md border bg-black text-card-foreground shadow flex items-center justify-center">
-                <span className="leading-7">
-                    TODO
-                </span>
-            </div>
-        );
-    }
-
-    return (
-        <Select
-            defaultValue={file.path}
-            onValueChange={handleChange}
-            className="mr-2 bg-background"
-        >
-            {files
-                .sort(({ path: a }: TorrentFile, { path: b }: TorrentFile): number => (a.localeCompare(b)))
-                .map((file: TorrentFile): ReactNode => (
-                    <SelectItem
-                        key={file.path}
-                        value={file.path}
-                            disabled={!isFormatSupported(file)}
-                    >
-                        {file.path}
-                    </SelectItem>
-                ))
-            }
-        </Select>
-    );
-};
+}: Props): ReactNode => (
+    <Select
+        defaultValue={selectedFilePath}
+        onValueChange={handleChange}
+        className="mr-2 bg-background"
+    >
+        {files
+            .sort(({ path: a }: TorrentFile, { path: b }: TorrentFile): number => (a.localeCompare(b)))
+            .map((file: TorrentFile): ReactNode => (
+                <SelectItem
+                    key={file.path}
+                    value={file.path}
+                >
+                    {file.path}
+                </SelectItem>
+            ))}
+    </Select>
+);
