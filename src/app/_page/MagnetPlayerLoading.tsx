@@ -6,6 +6,7 @@ import { PlayerInitial } from "./MagnetPlayer/PlayerWithFallback/PlayerInitial";
 export const MagnetPlayerLoading = (): ReactNode => (
     <>
         <Form />
+        {/* The page "feels" faster when `PlayerInitial` is displayed instead of `PlayerLoading`. */}
         <PlayerInitial />
     </>
 );
