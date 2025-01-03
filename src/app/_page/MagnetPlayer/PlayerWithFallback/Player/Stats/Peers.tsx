@@ -3,7 +3,7 @@ import { type ReactNode, useSyncExternalStore } from "react";
 import { type Torrent } from "webtorrent";
 
 import { Badge } from "~/components/Badge";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "~/components/Tooltip";
+import { Tooltip } from "~/components/Tooltip";
 
 /**
  * Number of peers, excluding the client itself.
@@ -31,18 +31,11 @@ export const Peers = ({ torrent }: Props): ReactNode => {
     const peers: number = usePeers(torrent);
 
     return (
-        <TooltipProvider>
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <Badge className={peers === 0 ? "text-destructive" : undefined}>
-                        <UsersIcon className="w-4 h-4 mr-1" />
-                        {peers}
-                    </Badge>
-                </TooltipTrigger>
-                <TooltipContent>
-                    Peers
-                </TooltipContent>
-            </Tooltip>
-        </TooltipProvider>
+        <Tooltip content="Peers">
+            <Badge className={peers === 0 ? "text-destructive" : undefined}>
+                <UsersIcon className="w-4 h-4 mr-1" />
+                {peers}
+            </Badge>
+        </Tooltip>
     );
 };
