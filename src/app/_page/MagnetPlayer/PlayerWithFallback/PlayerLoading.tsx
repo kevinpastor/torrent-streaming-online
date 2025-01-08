@@ -12,16 +12,16 @@ export const PlayerLoading = (): ReactNode => {
         <>
             <div className="pointer-events-none aspect-video flex flex-col items-center justify-center space-y-4 border rounded-md bg-black">
                 <Spinner.Root
-                    className="animate-spin"
                     size={84}
+                    className="animate-spin"
                 >
                     <Spinner.Track
-                        className="text-muted"
                         width={8}
+                        className="text-muted"
                     />
                     <Spinner.TrackFill
-                        className="text-foreground"
                         width={8}
+                        className="text-foreground"
                     />
                 </Spinner.Root>
                 {isSlow && (

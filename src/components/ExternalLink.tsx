@@ -1,15 +1,14 @@
-import { type PropsWithChildren, type ReactNode } from "react";
+import { type ComponentPropsWithRef, type ReactNode } from "react";
 
-interface Props {
-    href: string
-}
+import { classNames } from "~/utils/classNames";
 
-export const ExternalLink = ({ href, children }: PropsWithChildren<Props>): ReactNode => (
+export const ExternalLink = ({ className, ...props }: ComponentPropsWithRef<"a">): ReactNode => (
     <a
-        className="font-medium text-primary underline underline-offset-4"
-        href={href}
         target="_blank"
-    >
-        {children}
-    </a>
+        className={classNames(
+            "font-medium text-primary underline underline-offset-4",
+            className
+        )}
+        {...props}
+    />
 );

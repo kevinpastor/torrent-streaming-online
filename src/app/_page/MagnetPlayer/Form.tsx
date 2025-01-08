@@ -87,10 +87,10 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
                 )}
             </div>
             <Button
-                // A top margin is added to match the space taken by the form label.
-                className="mt-8"
                 type="submit"
                 disabled={onMagnetChange === undefined}
+                // A top margin is added to match the space taken by the form label.
+                className="mt-8"
             >
                 <CloudDownloadIcon />
                 Load
