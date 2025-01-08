@@ -61,6 +61,7 @@ export const FileSelector = ({
                 <SelectItem
                     key={file.path}
                     value={file.path}
+                    disabled={!isFormatSupported(file)}
                 >
                     {file.path}
                 </SelectItem>

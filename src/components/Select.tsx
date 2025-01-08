@@ -1,5 +1,3 @@
-"use client";
-
 import { Content, Icon, Item, ItemIndicator, ItemText, Portal, Root, ScrollDownButton, ScrollUpButton, Trigger, Value, Viewport } from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, type ComponentPropsWithRef, type PropsWithChildren, type ReactNode } from "react";
@@ -48,9 +46,8 @@ export const Select = ({ ref, className, children, ...props }: PropsWithChildren
     </Root>
 );
 
-export const SelectItem = ({ ref, className, children, ...props }: ComponentPropsWithRef<typeof Item>): ReactNode => (
+export const SelectItem = ({ className, children, ...props }: ComponentPropsWithRef<typeof Item>): ReactNode => (
     <Item
-        ref={ref}
         className={classNames(
             "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
             className
