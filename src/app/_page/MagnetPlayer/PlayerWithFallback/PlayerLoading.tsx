@@ -5,7 +5,7 @@ import { useBoolean, useTimeout } from "usehooks-ts";
 import { StatsInitial } from "./Player/Stats/StatsInitial";
 
 export const PlayerLoading = (): ReactNode => {
-    const { value: isSlow, setTrue } = useBoolean(true);
+    const { value: isSlow, setTrue } = useBoolean();
     useTimeout(setTrue, 5000);
 
     return (
