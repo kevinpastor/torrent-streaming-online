@@ -26,7 +26,7 @@ export const MagnetPlayerError = ({ error }: FallbackProps): ReactNode => {
     return (
         <>
             <Form />
-            <div className="aspect-video rounded-md border bg-black shadow flex flex-col items-center justify-center">
+            <div className="aspect-video rounded-md border bg-black shadow-sm flex flex-col items-center justify-center">
                 <p className="text-sm text-destructive">
                     {message}
                 </p>

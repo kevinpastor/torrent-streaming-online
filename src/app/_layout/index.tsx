@@ -21,9 +21,9 @@ export const Layout = ({ children }: PropsWithChildren): ReactNode => (
         lang="en"
         className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-        <body>
+        <body className="font-sans antialiased bg-background text-foreground">
             {/* A wrapping div is necessary in order to get proper scroll lock from Radix. */}
-            <div className="max-w-5xl mx-auto p-4 space-y-4">
+            <div className="max-w-5xl mx-auto p-4 flex flex-col gap-4">
                 <TooltipProvider delayDuration={0}>
                     <Title />
                     <CompatibilityAlert />

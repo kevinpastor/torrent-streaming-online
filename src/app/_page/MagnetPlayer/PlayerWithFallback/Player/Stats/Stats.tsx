@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const Stats = ({ torrent }: Props): ReactNode => (
-    <div className="flex justify-center space-x-1">
+    <div className="flex justify-center gap-1">
         <Peers torrent={torrent} />
         <DownloadSpeed torrent={torrent} />
         <UploadSpeed torrent={torrent} />

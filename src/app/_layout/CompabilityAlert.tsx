@@ -7,7 +7,7 @@ import { TypographyInlineCode } from "~/components/TypographyInlineCode";
 
 export const CompatibilityAlert = (): ReactNode => (
     <Alert>
-        <TriangleAlertIcon className="h-4 w-4" />
+        <TriangleAlertIcon className="size-4" />
         <AlertTitle>
             Limited Support
         </AlertTitle>

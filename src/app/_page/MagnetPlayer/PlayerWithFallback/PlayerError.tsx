@@ -4,7 +4,7 @@ import { StatsInitial } from "./Player/Stats/StatsInitial";
 
 export const PlayerError = (): ReactNode => (
     <>
-        <div className="aspect-video rounded-md border bg-black shadow flex flex-col items-center justify-center">
+        <div className="aspect-video rounded-md border bg-black shadow-sm flex flex-col items-center justify-center">
             <p className="text-sm text-destructive">
                 Unexpected error
             </p>

@@ -5,12 +5,12 @@ import { useBoolean, useTimeout } from "usehooks-ts";
 import { StatsInitial } from "./Player/Stats/StatsInitial";
 
 export const PlayerLoading = (): ReactNode => {
-    const { value: isSlow, setTrue } = useBoolean();
+    const { value: isSlow, setTrue } = useBoolean(true);
     useTimeout(setTrue, 5000);
 
     return (
         <>
-            <div className="pointer-events-none aspect-video flex flex-col items-center justify-center space-y-4 border rounded-md bg-black">
+            <div className="pointer-events-none aspect-video flex flex-col items-center justify-center gap-4 border rounded-md bg-black">
                 <Spinner.Root
                     size={84}
                     className="animate-spin"

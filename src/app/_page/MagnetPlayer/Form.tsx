@@ -66,9 +66,9 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex space-x-4"
+            className="flex gap-4 items-end"
         >
-            <div className="space-y-2 grow">
+            <div className="flex flex-col gap-2 grow">
                 <Label htmlFor="magnet">
                     Magnet Link
                 </Label>
@@ -89,8 +89,6 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
             <Button
                 type="submit"
                 disabled={onMagnetChange === undefined}
-                // A top margin is added to match the space taken by the form label.
-                className="mt-8"
             >
                 <CloudDownloadIcon />
                 Load

@@ -33,7 +33,7 @@ export const Peers = ({ torrent }: Props): ReactNode => {
     return (
         <Tooltip content="Peers">
             <Badge className={peers === 0 ? "text-destructive" : undefined}>
-                <UsersIcon className="w-4 h-4 mr-1" />
+                <UsersIcon className="size-4 mr-1" />
                 {peers}
             </Badge>
         </Tooltip>

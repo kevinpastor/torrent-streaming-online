@@ -142,7 +142,7 @@ export const Player = ({ torrentPromise }: Props): ReactNode => {
                     onError={handleError}
                     // An explicit important border color is provided to better match the theme.
                     // `flex` is used instead of `inline-flex` to prevent the player from having some ghost margin that appears on the parent.
-                    className="!border-zinc-800 !flex"
+                    className="border-zinc-800! flex!"
                 >
                     <MediaProvider />
                     <DefaultVideoLayout
