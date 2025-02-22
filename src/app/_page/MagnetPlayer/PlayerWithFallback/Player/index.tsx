@@ -139,6 +139,7 @@ export const Player = ({ torrentPromise }: Props): ReactNode => {
                     viewType="video"
                     playsInline
                     autoPlay
+                    // This callback does not seem to be called when a load error occurs. No other error handling for that case seems to be available.
                     onError={handleError}
                     // An explicit important border color is provided to better match the theme.
                     // `flex` is used instead of `inline-flex` to prevent the player from having some ghost margin that appears on the parent.
