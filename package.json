@@ -43,5 +43,13 @@
         "postcss": "^8.5.3",
         "tailwindcss": "^4.0.7",
         "typescript": "^5.7.3"
+    },
+    "pnpm": {
+        "overrides": {
+            "node-datachannel": "^0.25.0"
+        }
+    },
+    "comments": {
+        "pnpm.overrides.node-datachannel": "Fixes a build error where `Release/node_datachannel.node` is not found."
     }
 }
