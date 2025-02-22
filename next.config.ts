@@ -2,12 +2,10 @@ import type { NextConfig } from "next";
 // import bundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
-    experimental: {
-        reactCompiler: true
-    },
-    serverExternalPackages: [
-        "node-datachannel"
-    ],
+    // Disabled because of a build error related to a dependency of `babel-plugin-react-compiler`, `node-datachannel`.
+    // experimental: {
+    //     reactCompiler: true
+    // },
     webpack: (config, { webpack }) => {
         return {
             ...config,
