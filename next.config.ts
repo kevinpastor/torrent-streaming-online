@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     experimental: {
         reactCompiler: true
     },
+    serverExternalPackages: [
+        "node-datachannel"
+    ],
     webpack: (config, { webpack }) => {
         return {
             ...config,
