@@ -28,13 +28,14 @@ const getServiceWorker = async (): Promise<ServiceWorkerRegistration> => {
                         if (target === null || !("state" in target) || target.state !== "activated") {
                             return;
                         }
-                        
+
                         resolve(undefined);
                     });
                 }),
                 5000
             );
-        } catch {
+        }
+        catch {
             throw new KnownError(ErrorCode.ServiceWorkerTimeout);
         }
     }
@@ -44,7 +45,7 @@ const getServiceWorker = async (): Promise<ServiceWorkerRegistration> => {
 
 export const createClient = async (): Promise<Instance> => {
     const client: Instance = new WebTorrent();
-    
+
     const registration: ServiceWorkerRegistration = await getServiceWorker();
     client.createServer({ controller: registration });
 

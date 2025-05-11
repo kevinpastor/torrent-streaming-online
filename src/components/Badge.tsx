@@ -11,4 +11,3 @@ export const Badge = ({ className, ...props }: ComponentPropsWithRef<"div">): Re
         {...props}
     />
 );
-

@@ -20,5 +20,5 @@ export const Tooltip = ({ content, children }: PropsWithChildren<Props>): ReactN
                 {content}
             </Content>
         </Portal>
-    </Root >
+    </Root>
 );

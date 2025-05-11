@@ -36,8 +36,7 @@ export const DownloadSpeed = ({ torrent }: Props): ReactNode => {
                 <ArrowDownIcon className="size-4 mr-1" />
                 {downloadSpeed < 1000000
                     ? `${(downloadSpeed / 1000).toFixed(2)} KB/s`
-                    : `${(downloadSpeed / 1000000).toFixed(2)} MB/s`
-                }
+                    : `${(downloadSpeed / 1000000).toFixed(2)} MB/s`}
             </Badge>
         </Tooltip>
     );

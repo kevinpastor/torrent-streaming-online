@@ -29,5 +29,5 @@ export const StatsInitial = (): ReactNode => (
                 —%
             </Badge>
         </Tooltip>
-    </div >
+    </div>
 );

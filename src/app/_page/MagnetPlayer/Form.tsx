@@ -11,7 +11,7 @@ import { LinkButton } from "~/components/LinkButton";
 const sintelOpenMovieMagnet = "magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent";
 
 interface Props {
-    onMagnetChange?: (magnet: string) => void | Promise<void>
+    onMagnetChange?: (magnet: string) => void | Promise<void>;
 }
 
 export const Form = ({ onMagnetChange }: Props): ReactNode => {
@@ -69,23 +69,26 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
                     disabled={onMagnetChange === undefined}
                     className={error ? "border-destructive focus-visible:ring-destructive" : undefined}
                 />
-                {error ? (
-                    <InputError>
-                        {error}
-                    </InputError>
-                ) : (
-                    <InputDescription className="has-disabled:text-muted-foreground/50">
-                        Try it with{" "}
-                        <LinkButton
-                            type="button"
-                            onClick={handleClick}
-                            disabled={onMagnetChange === undefined}
-                        >
-                            Sintel
-                        </LinkButton>
-                        , an open-source movie.
-                    </InputDescription>
-                )}
+                {error
+                    ? (
+                        <InputError>
+                            {error}
+                        </InputError>
+                    )
+                    : (
+                        <InputDescription className="has-disabled:text-muted-foreground/50">
+                            Try it with
+                            {" "}
+                            <LinkButton
+                                type="button"
+                                onClick={handleClick}
+                                disabled={onMagnetChange === undefined}
+                            >
+                                Sintel
+                            </LinkButton>
+                            , an open-source movie.
+                        </InputDescription>
+                    )}
             </div>
             <Button
                 type="submit"

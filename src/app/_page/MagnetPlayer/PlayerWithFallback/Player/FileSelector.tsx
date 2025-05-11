@@ -4,8 +4,8 @@ import { type TorrentFile } from "webtorrent";
 import { Select, SelectItem } from "~/components/Select";
 
 interface Format {
-    extension: string
-    mimeType: string
+    extension: string;
+    mimeType: string;
 }
 
 export const supportedFormats: Array<Format> = [
@@ -40,9 +40,9 @@ export const isFormatSupported = (file: TorrentFile): boolean => (
 );
 
 interface Props {
-    files: TorrentFile[]
-    selectedFilePath: string
-    onChange: (path: string) => void
+    files: TorrentFile[];
+    selectedFilePath: string;
+    onChange: (path: string) => void;
 }
 
 export const FileSelector = ({

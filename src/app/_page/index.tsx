@@ -7,7 +7,7 @@ import { MagnetPlayerError } from "./MagnetPlayerError";
 import { MagnetPlayerLoading } from "./MagnetPlayerLoading";
 
 interface Props {
-    clientPromise?: Promise<Instance>
+    clientPromise?: Promise<Instance>;
 }
 
 export const MagnetPlayerWithFallback = ({ clientPromise }: Props): ReactNode => {

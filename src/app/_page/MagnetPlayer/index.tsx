@@ -5,7 +5,7 @@ import { Form } from "./Form";
 import { PlayerWithFallback } from "./PlayerWithFallback";
 
 interface Props {
-    clientPromise: Promise<Instance>
+    clientPromise: Promise<Instance>;
 }
 
 export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {

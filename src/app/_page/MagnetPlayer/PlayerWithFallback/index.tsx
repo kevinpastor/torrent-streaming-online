@@ -13,7 +13,7 @@ const LazyPlayer = lazy(async (): Promise<{ default: typeof Player }> => {
 });
 
 interface Props {
-    torrentPromise?: Promise<ITorrent>
+    torrentPromise?: Promise<ITorrent>;
 }
 
 export const PlayerWithFallback = ({ torrentPromise }: Props): ReactNode => {

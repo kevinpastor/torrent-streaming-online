@@ -8,6 +8,6 @@ export const LinkButton = ({ className, ...props }: ComponentPropsWithRef<"butto
             "text-primary underline cursor-pointer disabled:cursor-not-allowed disabled:opacity-50",
             className
         )}
-        {...props} 
+        {...props}
     />
 );

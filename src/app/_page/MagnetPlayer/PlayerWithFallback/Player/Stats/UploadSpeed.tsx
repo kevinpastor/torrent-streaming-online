@@ -36,8 +36,7 @@ export const UploadSpeed = ({ torrent }: Props): ReactNode => {
                 <ArrowUpIcon className="size-4 mr-1" />
                 {uploadSpeed < 1000000
                     ? `${(uploadSpeed / 1000).toFixed(2)} KB/s`
-                    : `${(uploadSpeed / 1000000).toFixed(2)} MB/s`
-                }
+                    : `${(uploadSpeed / 1000000).toFixed(2)} MB/s`}
             </Badge>
         </Tooltip>
     );
