@@ -40,7 +40,7 @@ export const isFormatSupported = (file: TorrentFile): boolean => (
 );
 
 interface Props {
-    files: TorrentFile[];
+    files: Array<TorrentFile>;
     selectedFilePath: string;
     onChange: (path: string) => void;
 }

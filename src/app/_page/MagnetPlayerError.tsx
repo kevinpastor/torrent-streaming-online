@@ -18,6 +18,7 @@ export const MagnetPlayerError = ({ error }: FallbackProps): ReactNode => {
         else if (error.code === ErrorCode.ServiceWorkerNull) {
             message = "Initialization failed";
         }
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- Prevents new error codes from being problematic.
         else if (error.code === ErrorCode.ServiceWorkerTimeout) {
             message = "Initialization timed out";
         }

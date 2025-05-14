@@ -80,7 +80,6 @@ export const Form = ({ onMagnetChange }: Props): ReactNode => {
                             Try it with
                             {" "}
                             <LinkButton
-                                type="button"
                                 onClick={handleClick}
                                 disabled={onMagnetChange === undefined}
                             >

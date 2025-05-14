@@ -17,7 +17,7 @@ export const MagnetPlayer = ({ clientPromise }: Props): ReactNode => {
             torrent.destroy();
         }
 
-        const promise: Promise<Torrent> = new Promise((resolve): void => {
+        const promise: Promise<Torrent> = new Promise<Torrent>((resolve): void => {
             client.add(magnet, resolve);
         });
 

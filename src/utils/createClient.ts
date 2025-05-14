@@ -10,7 +10,7 @@ const getServiceWorker = async (): Promise<ServiceWorkerRegistration> => {
     }
 
     const registration: ServiceWorkerRegistration = await navigator.serviceWorker.register("/sw.min.js");
-    const serviceWorker: ServiceWorker | null = registration.installing || registration.waiting || registration.active;
+    const serviceWorker: ServiceWorker | null = registration.installing ?? registration.waiting ?? registration.active;
     if (serviceWorker === null) {
         throw new KnownError(ErrorCode.ServiceWorkerNull);
     }
