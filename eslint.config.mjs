@@ -100,6 +100,11 @@ const eslintConfig = defineConfig([
                         attributes: false
                     }
                 }
+            ],
+            "no-else-return": [
+                "error", {
+                    allowElseIf: false
+                }
             ]
         }
     }
