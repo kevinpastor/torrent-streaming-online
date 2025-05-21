@@ -6,7 +6,7 @@ export const Alert = ({ className, ...props }: ComponentPropsWithRef<"div">): Re
     <div
         role="alert"
         className={classNames(
-            "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground",
+            "relative w-full rounded-lg border p-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
             className
         )}
         {...props}
@@ -15,7 +15,7 @@ export const Alert = ({ className, ...props }: ComponentPropsWithRef<"div">): Re
 
 export const AlertTitle = ({ className, ...props }: ComponentPropsWithRef<"div">): ReactNode => (
     <div
-        className={classNames("mb-1 font-medium leading-none tracking-tight", className)}
+        className={classNames("mb-[0.5em] font-medium leading-none tracking-tight", className)}
         {...props}
     />
 );

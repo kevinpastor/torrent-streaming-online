@@ -11,7 +11,7 @@ export const TermsOfService = (): ReactNode => (
         <TypographyP>
             This website is provided "as is", without warranty of any kind. By using this website, you agree to the following:
         </TypographyP>
-        <ul className="leading-7 not-first:mt-6">
+        <ul className="leading-7 not-first:mt-[0.5em]">
             <li>
                 You may only use this website to stream content that is legally distributable.
             </li>
