@@ -105,7 +105,8 @@ const eslintConfig = defineConfig([
                 "error", {
                     allowElseIf: false
                 }
-            ]
+            ],
+            "@eslint-react/no-useless-fragment": "error"
         }
     }
 ]);

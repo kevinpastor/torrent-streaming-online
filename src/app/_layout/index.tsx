@@ -6,7 +6,6 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { type PropsWithChildren, type ReactNode } from "react";
 
-import { Accordion } from "~/components/Accordion";
 import { TooltipProvider } from "~/components/Tooltip";
 
 import { CompatibilityAlert } from "./CompabilityAlert";
@@ -28,10 +27,7 @@ export const Layout = ({ children }: PropsWithChildren): ReactNode => (
                     <Title />
                     <CompatibilityAlert />
                     {children}
-                    <Accordion type="single" collapsible>
-                        {/* <Faq /> */}
-                        <TermsOfService />
-                    </Accordion>
+                    <TermsOfService />
                     <Analytics />
                     <SpeedInsights />
                 </TooltipProvider>
