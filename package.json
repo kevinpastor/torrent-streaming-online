@@ -1,69 +1,71 @@
 {
-    "name": "torrent-streaming-online",
-    "version": "0.1.0",
-    "private": true,
-    "packageManager": "pnpm@9.15.5",
-    "scripts": {
-        "start": "next dev",
-        "build": "next build",
-        "preview": "pnpm run build && next start",
-        "lint": "next lint"
+  "name": "torrent-streaming-online",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.5",
+  "scripts": {
+    "start": "next dev --webpack",
+    "build": "next build --webpack",
+    "preview": "pnpm run build && next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-label": "^2.1.11",
+    "@radix-ui/react-select": "^2.3.3",
+    "@radix-ui/react-tooltip": "^1.2.12",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "@vidstack/react": "^1.15.6",
+    "clsx": "^2.1.1",
+    "geist": "^1.7.2",
+    "lucide-react": "^0.509.0",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-error-boundary": "^6.1.2",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "usehooks-ts": "^3.1.1",
+    "webtorrent": "^3.0.16"
+  },
+  "devDependencies": {
+    "@eslint-react/eslint-plugin": "^1.53.1",
+    "@eslint/js": "^9.39.4",
+    "@next/bundle-analyzer": "16.2.10",
+    "@next/eslint-plugin-next": "16.2.10",
+    "@stylistic/eslint-plugin": "^4.4.1",
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/node": "^24.13.2",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@types/webtorrent": "^0.110.1",
+    "babel-plugin-react-compiler": "19.1.0-rc.1",
+    "eslint": "10.6.0",
+    "eslint-config-next": "16.2.10",
+    "eslint-plugin-import": "^2.32.0",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.2",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.63.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "node-datachannel": "^0.25.0",
+      "@types/react": "19.2.17",
+      "@types/react-dom": "19.2.3"
     },
-    "dependencies": {
-        "@radix-ui/react-label": "^2.1.11",
-        "@radix-ui/react-select": "^2.3.3",
-        "@radix-ui/react-tooltip": "^1.2.12",
-        "@vercel/analytics": "^1.6.1",
-        "@vercel/speed-insights": "^1.3.1",
-        "@vidstack/react": "^1.15.6",
-        "clsx": "^2.1.1",
-        "geist": "^1.7.2",
-        "lucide-react": "^0.509.0",
-        "next": "^15.5.20",
-        "react": "^19.2.7",
-        "react-dom": "^19.2.7",
-        "react-error-boundary": "^6.1.2",
-        "tailwind-merge": "^3.6.0",
-        "tailwindcss-animate": "^1.0.7",
-        "usehooks-ts": "^3.1.1",
-        "webtorrent": "^2.8.5"
-    },
-    "devDependencies": {
-        "@eslint-react/eslint-plugin": "^1.53.1",
-        "@eslint/js": "^9.39.4",
-        "@next/bundle-analyzer": "^15.5.20",
-        "@next/eslint-plugin-next": "^15.5.20",
-        "@stylistic/eslint-plugin": "^4.4.1",
-        "@tailwindcss/postcss": "^4.3.2",
-        "@types/node": "^20.19.43",
-        "@types/react": "^19.2.17",
-        "@types/react-dom": "^19.2.3",
-        "@types/webtorrent": "^0.110.1",
-        "babel-plugin-react-compiler": "19.1.0-rc.1",
-        "eslint": "^9.39.4",
-        "eslint-config-next": "^15.5.20",
-        "eslint-plugin-import": "^2.32.0",
-        "postcss": "^8.5.16",
-        "tailwindcss": "^4.3.2",
-        "typescript": "~5.8.3",
-        "typescript-eslint": "^8.63.0"
-    },
-    "pnpm": {
-        "overrides": {
-            "node-datachannel": "^0.25.0"
-        },
-        "ignoredBuiltDependencies": [
-            "@vercel/speed-insights",
-            "bufferutil",
-            "sharp",
-            "utf-8-validate",
-            "utp-native"
-        ],
-        "onlyBuiltDependencies": [
-            "node-datachannel"
-        ]
-    },
-    "comments": {
-        "pnpm.overrides.node-datachannel": "Fixes a build error where `Release/node_datachannel.node` is not found. node-datachannel is a sub-dependency of webtorrent."
-    }
+    "ignoredBuiltDependencies": [
+      "@vercel/speed-insights",
+      "bufferutil",
+      "sharp",
+      "utf-8-validate",
+      "utp-native"
+    ],
+    "onlyBuiltDependencies": [
+      "node-datachannel"
+    ]
+  },
+  "comments": {
+    "pnpm.overrides.node-datachannel": "Fixes a build error where `Release/node_datachannel.node` is not found. node-datachannel is a sub-dependency of webtorrent."
+  }
 }

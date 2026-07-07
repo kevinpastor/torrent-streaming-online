@@ -2,9 +2,7 @@ import type { NextConfig } from "next";
 // import bundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
-    experimental: {
-        reactCompiler: true
-    },
+    reactCompiler: true,
     webpack: (config, { webpack }) => ({
         ...config,
         resolve: {
