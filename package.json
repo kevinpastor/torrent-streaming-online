@@ -18,7 +18,7 @@
     "@vidstack/react": "^1.15.6",
     "clsx": "^2.1.1",
     "geist": "^1.7.2",
-    "lucide-react": "^0.509.0",
+    "lucide-react": "^1.23.0",
     "next": "16.2.10",
     "react": "19.2.7",
     "react-dom": "19.2.7",
@@ -45,7 +45,7 @@
     "eslint-plugin-import": "^2.32.0",
     "postcss": "^8.5.16",
     "tailwindcss": "^4.3.2",
-    "typescript": "~5.8.3",
+    "typescript": "~6.0.3",
     "typescript-eslint": "^8.63.0"
   },
   "pnpm": {
